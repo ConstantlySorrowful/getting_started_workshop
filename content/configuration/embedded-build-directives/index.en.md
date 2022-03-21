@@ -1,6 +1,6 @@
 ---
 title: 'Directives'
-weight: 23
+weight: 43
 ---
 
 # Intro to Directives 

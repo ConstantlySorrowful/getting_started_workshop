@@ -1,6 +1,6 @@
 ---
 title: 'Markdown'
-weight: 22
+weight: 42
 ---
 
 You author AWS Workshop Studio content in Markdown, a plain text format for writing structured documents. Markdown is made to be easy to read and write. However, for it to work properly, you will have to follow some conventions outlined in this guide.

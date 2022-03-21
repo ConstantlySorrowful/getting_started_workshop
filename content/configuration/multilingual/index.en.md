@@ -1,6 +1,6 @@
 ---
 title: 'Multilingual and i18n'
-weight: 25
+weight: 45
 ---
 
 This template is fully compatible with multilingual mode.
