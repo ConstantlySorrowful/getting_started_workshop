@@ -1,6 +1,6 @@
 ---
 title : "AWS Account"
-weight : 202
+weight : 2
 ---
 
 **Amazon Web Service (AWS) account** with:

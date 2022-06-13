@@ -1,7 +1,11 @@
 ---
-title : "Lab 2: AVH in EC2"
-weight : 302
+title : "Lab 2: Building and running code with Arm Virtual Hardware (Step 2)"
+weight : 2
 ---
+
+In this lab we will use the EC2 instance we launched in the prior lab to clone a repository from GitHub. We will then compile the project for a Corestone-300 architecture. And finally run the application using the Arm Virtual Hardware emulator for the Corstone-300.
+
+with the custome AMI prepared by ARM. This AMI is configured with the tools needed to build and test the development of embedded applications using FreeRTOS, CMSIS-Packs, and AWS IoT SDKs. You can then run and debug on emulators for the ARM architecture of your product.
 
 
 # Find AVH in AWS Marketplace

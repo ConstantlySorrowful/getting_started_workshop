@@ -1,6 +1,6 @@
 ---
 title : "What is ARM Virtual Hardware?"
-weight : 110
+weight : 1
 ---
 
 **Arm Virtual Hardware (AVH)** provides simulation models, software tooling, and infrastructure that can be integrated into CI/CD and MLOps development flows.

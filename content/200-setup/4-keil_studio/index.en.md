@@ -1,6 +1,6 @@
 ---
 title : "Keil Studio"
-weight : 204
+weight : 4
 ---
 
 - Open [Keil Studio](https://studio.keil.arm.com) and go to **File - Import Project**:

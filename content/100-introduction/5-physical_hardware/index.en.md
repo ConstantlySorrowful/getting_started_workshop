@@ -1,6 +1,6 @@
 ---
 title : "Physical Hardware"
-weight : 150
+weight : 5
 ---
 
 **Modular programming** recommends to separate the functionality of a program into independent, interchangeable modules that use defined interfaces that abstract the hardware functionality. This design concept simplifies code re-use and allows to implement **Virtual Drivers** and **Hardware Drivers** that expose the same API and implement the same logical behavior. If built correctly, it overcomes many issues that are typically found in monolithic software and enables a staged **software validation** with multiple test levels such as unit, integration, and system testing.

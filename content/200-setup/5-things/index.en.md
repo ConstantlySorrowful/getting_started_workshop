@@ -1,6 +1,6 @@
 ---
 title : "AWS IoT Thing"
-weight : 205
+weight : 5
 ---
 
 **AWS IoT Thing**:

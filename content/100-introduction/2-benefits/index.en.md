@@ -1,6 +1,6 @@
 ---
 title : "Benefits"
-weight : 120
+weight : 2
 ---
 
 ### Test without Hardware

@@ -1,6 +1,6 @@
 ---
 title : "Virtual Hardware Targets"
-weight : 130
+weight : 3
 ---
 
 The **Arm Virtual Hardware (AVH) Targets** provide a functional accurate simulation of an Arm-based SoC and can be automated for scalable deployment in the CI development flow. This virtual platform can be used standalone or with development tools such as Arm Development Studio or Arm Keil MDK with debug and trace capabilities supported as well.
