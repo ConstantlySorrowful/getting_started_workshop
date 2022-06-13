@@ -25,7 +25,7 @@ The resources for this workshop can be deployed in all regions that support AWS 
 ### Requirements
 
 - **AWS Account:** If you don’t have an AWS Account yet, please follow the instructions [here](https://aws.amazon.com/console/) to create one.
-- **ARM Account:** Bookmark this [link](https://studio.keil.arm.com/auth/login/) for logging into Keil Studio Cloud and creating an account if you do not already have one.
+- **Arm Account:** Bookmark this [link](https://studio.keil.arm.com/auth/login/) for logging into Keil Studio Cloud and creating an account if you do not already have one.
 - **Github Account:** The code for the labs will be saved in your own github account. Go [here](https://github.com/) to create an account if you do not already have one.
 - **Supported Browser:** e.g. Safari, Chrome or Firefox in a recent version
 

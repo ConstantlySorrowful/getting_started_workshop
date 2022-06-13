@@ -1,17 +1,21 @@
 ---
-title : "Lab 2: Building and running code with Arm Virtual Hardware (Step 1)"
+title : "Lab 2: Building and running code with AVH (Step 1)"
 weight : 1
 ---
 
-# install cmsis-toolbox latest
 
-# clone demo repo
+## Use SSH Command to Connect to EC2 Instance
 
-# edit code
+If you have stopped your EC2 instance after completing the previous lab, go to the AWS Console in your browser and open the EC2 service page. Then select the instance you created in Lab-1 and set the **Instance state** to start.
 
-# build/run from EC2
+![instance_restart](/static/restart-ec2.png)
 
-#!/bin/bash
-mkdir -p $HOME/bin
-cd $HOME/bin
-wget https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Ftoolbox%2F0.10.2/cmsis-toolbox-linux64.tar.gz
+Wait until the instance has completed startup and then open a terminal application or use VSCode to connect.
+
+```
+$ ssh ubuntu@xx.xx.xx.xx
+```
+
+Alternatively, you can use VSCode to connect.
+
+![vscode-ssh](/static/vscode-ssh-2.png)

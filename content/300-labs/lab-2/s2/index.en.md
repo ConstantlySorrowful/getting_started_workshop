@@ -1,53 +1,23 @@
 ---
-title : "Lab 2: Building and running code with Arm Virtual Hardware (Step 2)"
+title : "Lab 2: Building and running code with AVH (Step 2)"
 weight : 2
 ---
 
-In this lab we will use the EC2 instance we launched in the prior lab to clone a repository from GitHub. We will then compile the project for a Corestone-300 architecture. And finally run the application using the Arm Virtual Hardware emulator for the Corstone-300.
+## Install latest version of cmsis-toolbox utilities
 
-with the custome AMI prepared by ARM. This AMI is configured with the tools needed to build and test the development of embedded applications using FreeRTOS, CMSIS-Packs, and AWS IoT SDKs. You can then run and debug on emulators for the ARM architecture of your product.
+Depending on the AMI version selected whe you launched the EC2 instance, you may want to update the cmsis-toolbox utilities.
 
+Check for latest version here: https://github.com/Open-CMSIS-Pack/devtools/releases
 
-# Find AVH in AWS Marketplace
+At this time the latest version is: 0.10.2. I recommend creating a $HOME/bin directory. Then download and unpack the file there. Also add the location to your PATH environment variable.
 
-# select instance type
+```
+mkdir -p $HOME/bin
+cd $HOME/bin
+rm -rf cmsis-toolbox-linux64*
+wget https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Ftoolbox%2F0.10.2/cmsis-toolbox-linux64.tar.gz
+tar xzf cmsis-toolbox-linux64.tar.gz
+echo 'PATH=$HOME/bin/cmsis-toolbox-linux64/bin:$PATH' >> $HOME/.bashrc
+```
 
-# add ssh key for local workstation
-
-# launch and copy public IP address
-
-# ssh into EC2 commandline
-
-# remote ssh extension for VSCode
-
-# install cmsis-toolbox latest
-
-# clone demo repo
-
-# edit code
-
-# build/run from EC2
-
-
-
-
-
-- Select Fork repository into your own github account
-- Login to Keil Studio and import your first project
-- Use AWS Toolkit to create a thing, certificate, policy
-- Save cert and key in KSC file
-- Edit code to use new credentials
-- Build it!
-- connect to AWS MQTT test and subscribe to view MQTT messages from you virtual device
-- Run your project in the AVH simulation and verify pub/sub messages
-
-    KSC - import/clone mqtt demo
-    use AWS Toolkit
-        create a thing
-        generate a cert
-        create and attach a policy
-        save certs
-        edit code to include cert/key
-    build/run
-    AWS console subscribe
-    see pub/sub messages
+You will need to logout and back in or source the $HOME/.bashrc file to apply the PATH variable change.

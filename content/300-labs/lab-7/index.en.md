@@ -1,5 +1,6 @@
 ---
-title : "Lab 7: AWS IoT Jobs"
-weight : 307
+title : "Lab 7: Deploying Over The Air (OTA) Firmware Updates"
+weight : 70
 ---
 
+title : "Lab 6: TBD - Customize VIO - Python"

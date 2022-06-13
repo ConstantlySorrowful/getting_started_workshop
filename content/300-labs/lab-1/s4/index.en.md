@@ -1,6 +1,6 @@
 ---
 title : "Lab 1: Launch an EC2 Instance with AVH AMI (Step 4)"
-weight : 4
+weight : 14
 ---
 
 

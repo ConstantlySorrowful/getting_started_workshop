@@ -1,6 +1,6 @@
 ---
 title : "Lab 1: Launch an EC2 Instance with AVH AMI (Step 3)"
-weight : 3
+weight : 13
 ---
 
 On this page there are several selection options. For the Action, Launch from Website is the default. This will be sufficient for this workshop. If you need to adjust other configuration details, select Launch through EC2. Select an **EC2 Instance Type** of t3.large. This will be adequate for the workshop labs.

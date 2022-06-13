@@ -1,10 +1,18 @@
 ---
-title : "Lab 5: Optional - Local Debug"
-weight : 305
+title : "Lab 5: Using Device Shadows"
+weight : 50
 ---
 
-# KSC - new project for stm32l4 discovery board
-# Edit source code with cert/key
-# Connect board via USB
-# Build image
-# Start debug
+
+# Enable CI/CD
+setup github secrets
+setup github actions
+describe/modify workflow file
+add trivial code change and commit/push
+watch EC2 instance launch and run simple test
+verify workflow run completes successfully in github portal
+
+# Setup and run Device Advisor
+    manually configure DA
+    run and watch results in AWS console
+    
