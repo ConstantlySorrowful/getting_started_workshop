@@ -1,5 +1,5 @@
 ---
-title: "Getting Started With ARM Virtual Hardware (AVH) in Keil Studio Cloud (KSC)"
+title: "Getting Started With Arm Virtual Hardware (AVH) in Keil Studio Cloud (KSC)"
 weight: 0
 ---
 

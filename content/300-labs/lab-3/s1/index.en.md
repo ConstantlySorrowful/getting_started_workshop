@@ -6,7 +6,7 @@ weight : 1
 
 ## GetHub Secrets - Values 
 
-The following (secret) configuration values need to be added to the repositories. In your browser, navigate to the GitHub repository you have forked. Select the Setting gear icon and then scroll down in the left column to find Secrets. Then select Actions. Here you will enter the values we saved earlier in ./config_files/secrets.txt. Add a secret name/value pair for each item.
+The following (secret) configuration values need to be added to the repositories. In your browser, navigate to the GitHub repository you have forked. Select the Setting gear icon and then scroll down in the left column to find Secrets. Then select Actions. Here you will enter the values we saved earlier in ./certs/secrets.txt. Add a secret name/value pair for each item. Do not add quotes to the values entered. 
 
 
 Secret Name                    | Description
@@ -20,7 +20,7 @@ Secret Name                    | Description
 `AWS_SECURITY_GROUP_ID`        | The id of the [VPC security group](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html) to add the EC2 instance to. Shall have format `sg-xxxxxxxx`.
 `AWS_SUBNET_ID`                | The id of the [VPC subnet](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#view-subnet) to connect the EC2 instance to. Shall have format `subnet-xxxxxxxx`.
 **IoT Cloud Access**           | Settings and credentials required to connect an [AWS IoT Thing](https://github.com/MDK-Packs/Documentation/tree/master/AWS_Thing)
-`CLIENT_CERTIFICATE_PEM`       | Client (device) certificate
-`CLIENT_PRIVATE_KEY_PEM`       | Client (device) private key
-`IOT_THING_NAME`               | Client  (device) name
-`MQTT_BROKER_ENDPOINT`         | MQTT broker host name
+`CLIENT_CERTIFICATE_PEM`       | Cut/Paste from ./certs/secrets.txt as a single long string. Be sure to remove double-quotes.
+`CLIENT_PRIVATE_KEY_PEM`       | Cut/Paste from ./certs/secrets.txt as a single long string. Be sure to remove double-quotes.
+`IOT_THING_NAME`               | AWS IoT Core Thing name.
+`MQTT_BROKER_ENDPOINT`         | MQTT broker Endpoint from AWS Console IoT Core Settings page.

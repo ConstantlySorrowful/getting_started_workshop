@@ -15,7 +15,7 @@ Now that you have completed the following:
 You can now build the project using the cmsis-toolbox utility 'cbuild'.
 
 ```
-cd $HOME/AVH_Demo
+cd $HOME/AVH_Labs
 cbuild demo.VHT_MPS3_Corstone_SSE-300.cprj
 ```
 You should see many lines of compiling scroll past, but at the end you should see:
@@ -26,10 +26,10 @@ info cbuild: build finished successfully!
 
 It is time to run the image using the AVH emulator. Before starting the emulator, open the AWS Console and navigate to the IoT Core service page. From the left column, select the MQTT test client. Enter a topic filter '#' and then expand the Additional configuration list. Choose 'Display payloads as strings (more accurate)' and then click Subscribe. Keep this tab open in your browser to see MQTT messages sent from the application.
 
-Now return to the shell in the EC2 instance execute the following code.
+Now return to the shell in the EC2 instance and execute the following code. Or run ./scripts/run300.sh
 
 ```
-cd $HOME/AVH_Demo
+cd $HOME/AVH_Labs
 VHT_MPS3_Corstone_SSE-300 \
 -C mps3_board.visualisation.disable-visualisation=1 \
 -C mps3_board.telnetterminal0.start_telnet=0 \
