@@ -1,33 +1,18 @@
 ---
-title : "Lab 3: Automate with GitHub Actions CI/CD Workflows"
-weight : 30
+title : "Lab 3: Automate with GitHub Actions CI/CD Workflows (Step 2)"
+weight : 2
 ---
 
+The workflow jobs and steps are contained in the following files:
 
-https://github.com/ARM-software/AVH-AWS_MQTT_Demo.git
+- $HOME/AVH_Labs/.github/workflows/c300_virtual_hardware.yml
+- $HOME/AVH_Labs/avh.yml
+- $HOME/AVH_Labs/build.py
 
-- Fork this repository into your own account
+These can be modified later as needed to modify the configuration and add more test cases. For now you can keep them as-is.
 
-with at least _Write_ access rights
-- Store the AWS account configuration (obtained in step 1) as
-    [GitHub Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets) - ***AWS Access** values in the forked repository
+Navigate to your repository in your browser and select Actions from the top and the select the Corestone 300 Arm Virtual Hardware workflow. Select the drop-down on the right labled 'Run workflow' and choose the main branch and run workflow. In the screenshot you will see a run has already completed. After you start your run, you will see a new workflow execution in your list. This will run for several minutes.
 
-## GetHub Secrets - Values 
+If you return to the AWS Console - EC2 service page, you will see a new EC2 instance starting up. This new instance will clone your repository, compile the project, and then run the application. It will then capture the console log and attach it to the results in GitHub. 
 
-The following (secret) configuration values need to be added to the repositories 
-[Secret store](../../settings/secrets/actions):
-
-Secret Name                    | Description
-:------------------------------|:--------------------
-**AWS Access**                 | Settings and credentials required to acces AWS EC2 and S3 services
-`AWS_IAM_PROFILE`              | The [IAM Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html) to be used for AWS access. The value shall be preceded with `Name=` prior to the actual profile name. For example `Name=myAVHRole`.
-`AWS_ACCESS_KEY_ID`<br>`AWS_SECRET_ACCESS_KEY`      | [Access key pair](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) for the AWS account (as IAM user) that shall be used by the CI workflow for AWS access.
-`AWS_S3_BUCKET_NAME`           | The name of the S3 storage bucket to be used for data exchange between GitHub and AWS AMI.
-`AWS_DEFAULT_REGION`           | The data center region the AVH AMI will be run on. For example `eu-west-1`.
-`AWS_SECURITY_GROUP_ID`        | The id of the [VPC security group](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html) to add the EC2 instance to. Shall have format `sg-xxxxxxxx`.
-`AWS_SUBNET_ID`                | The id of the [VPC subnet](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#view-subnet) to connect the EC2 instance to. Shall have format `subnet-xxxxxxxx`.
-**IoT Cloud Access**           | Settings and credentials required to connect an [AWS IoT Thing](https://github.com/MDK-Packs/Documentation/tree/master/AWS_Thing)
-`CLIENT_CERTIFICATE_PEM`       | Client (device) certificate
-`CLIENT_PRIVATE_KEY_PEM`       | Client (device) private key
-`IOT_THING_NAME`               | Client  (device) name
-`MQTT_BROKER_ENDPOINT`         | MQTT broker host name
+![actions](/static/actions.png)

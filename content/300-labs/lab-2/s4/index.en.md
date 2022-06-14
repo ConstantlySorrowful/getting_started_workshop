@@ -30,6 +30,21 @@ scp <hash>-certificate.pem.crt ubuntu@<ip address of EC2 instance>:certs/
 scp <hash>-private.pem.key ubuntu@<ip address of EC2 instance>:certs/
 ```
 
+Several settings will be needed that are specific to your AWS Account. Edit the file ./config_files.secrets.txt and enter values from you account settings. However, leave the certificate and key values empty for now. A script is provided that will format them as needed for our use.
+
+AWS_ACCESS_KEY_ID = 
+AWS_SECRET_ACCESS_KEY = 
+AWS_DEFAULT_REGION = 
+AWS_IAM_PROFILE = 
+AWS_S3_BUCKET_NAME = 
+AWS_SECURITY_GROUP_ID = 
+AWS_SUBNET_ID = 
+IOT_THING_NAME = 
+MQTT_BROKER_ENDPOINT = 
+CLIENT_CERTIFICATE_PEM = 
+CLIENT_PRIVATE_KEY_PEM = 
+
+
 Then back to the shell in the EC2 instance:
 
 ```
