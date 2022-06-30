@@ -29,5 +29,5 @@ The resources for this workshop can be deployed in all regions that support AWS 
 - **Github Account:** The code for the labs will be saved in your own github account. Go [here](https://github.com/) to create an account if you do not already have one.
 - **Supported Browser:** e.g. Safari, Chrome or Firefox in a recent version
 
-### Cleanup
+### Cleaning Up
 You will find instructions to remove the deployed resources in the section "Cleanup". Please ensure to perform the cleanup steps after the completion of the workshop to avoid potentially unwanted costs.

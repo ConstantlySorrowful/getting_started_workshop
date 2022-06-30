@@ -7,5 +7,7 @@ This workshop demonstrates how to setup a development workflow with cloud-based 
   
 - Setting up the required AWS resources, IAM Roles, and Policies
 - Developing CMSIS-Packs projects in Keil Studio Cloud
-- Running your project using ARM Virtual Hardware
-- Configuring Gihub Actions to automate your workflow
+- Running your project using Arm Virtual Hardware
+- Configuring Github Actions and Secrets to automate your workflow
+
+### Click Next to learn about Arm Virtual Hardware (AVH)

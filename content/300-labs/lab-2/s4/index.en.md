@@ -3,6 +3,10 @@ title : "Lab 2: Building and running code with Arm Virtual Hardware (Step 4)"
 weight : 4
 ---
 
+## Fork the examples repository in GitHub
+
+Open a browser and navigate to [AVH_Labs](https://github.com/ConstantlySorrowful/AVH_Labs). In top/right select **Fork**. A copy of this repository needs to be added to your own GitHub account to make changes and configure the CI/CD workflows.
+
 ## Clone example code from GitHub
 
 Now we are ready to get started with some example code. In this step we will clone a repository from GitHub. This repository contains a project that implements MQTT Mutual Authentication with FreeRTOS and is configured to use CMSIS-Packs. We will then compile the project using the command line tools from the cmsis-toolbox we installed earlier.
@@ -12,16 +16,18 @@ Open a terminal to the EC2 instance and follow these steps.
 
 ```
 cd $HOME
-git clone https://github.com/ConstantlySorrowful/AVH_Labs.git
+git clone https://github.com/<your account>/AVH_Labs.git
 ```
-We now need to edit the aws_clientcredential.h and aws_client_credential_keys.h files to add the configuration specific to your AWS account settings. There are some scripts in the repository to help, but first we need to upload the certificate and private key generated when you created a new Thing in your account. The scripts depend on these files being the $HOME/AVH_Labs/certs directory. If you are using VSCode, you can simple drag/drop the files from your local workstation folder where you have saved them. If you are using a command line shell you will need to use scp:
+For convienience in this lab we will insert credentials directly into our source code. This is NOT an acceptable practive for actual deployments. In a later lab we will discuss a better practice for handling security credentials in IoT devices. 
+
+We will edit the aws_clientcredential.h and aws_client_credential_keys.h files to add the configuration specific to your AWS account settings. There are some scripts in the repository to help, but first we need to upload the certificate and private key generated when you created a new Thing in your account. The scripts depend on these files being in the $HOME/AVH_Labs/certs directory. If you are using VSCode, you can simple drag/drop the files from your local workstation folder where you have saved them. If you are using a command line shell you can upload the files using scp:
 
 From your local workstation:
 
 ```
 cd /path/to/where/you/saved/the/files
-scp <hash>-certificate.pem.crt ubuntu@<ip address of EC2 instance>:certs/
-scp <hash>-private.pem.key ubuntu@<ip address of EC2 instance>:certs/
+scp <hash>-certificate.pem.crt ubuntu@<ip address of EC2 instance>:AVH_Labs/certs/
+scp <hash>-private.pem.key ubuntu@<ip address of EC2 instance>:AVH_Labs/certs/
 ```
 
 Several settings will be needed that are specific to your AWS Account. Edit the file ./certs/secrets.txt and enter values from you account settings.
@@ -40,7 +46,7 @@ Then return to the shell in the EC2 instance. A script is provided that will app
 
 ```
 cd $HOME/AVH_Labs/certs
-./scripts/edit-creds.sh
+./edit-creds.sh
 ```
 
 After running the edit-creds.sh script, you can confirm the files have been updated:
