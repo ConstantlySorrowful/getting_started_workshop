@@ -5,7 +5,7 @@ weight : 3
 
 ### IAM - Create an S3 Bucket
 
-We will also need an S3 Bucket to support the CI/CD workflow automation.
+You will also need an S3 Bucket to support the CI/CD workflow automation.
 
 Open the AWS Console in your browser and navigate to the S3 service page. 
 

@@ -1,57 +1,41 @@
 ---
-title : "Lab 2: Building and running code with Arm Virtual Hardware (Step 4)"
+title : "Lab 2: Building and running code with AVH (Step 4)"
 weight : 4
 ---
 
-## Fork the examples repository in GitHub
+## Build and run the code
 
-Open a browser and navigate to [AVH_Labs](https://github.com/ConstantlySorrowful/AVH_Labs). In top/right select **Fork**. A copy of this repository needs to be added to your own GitHub account to make changes and configure the CI/CD workflows.
+Now that you have completed the following:
 
-## Clone example code from GitHub
+- Creating a Thing in AWS Console
+- Creating a policy and certificate
+- Uploading the certificate and private key to the EC2 instance
+- Editing the credentials configuration files
 
-Now we are ready to get started with some example code. In this step we will clone a repository from GitHub. This repository contains a project that implements MQTT Mutual Authentication with FreeRTOS and is configured to use CMSIS-Packs. We will then compile the project using the command line tools from the cmsis-toolbox we installed earlier.
-
-
-Open a terminal to the EC2 instance and follow these steps.
-
-```
-cd $HOME
-git clone https://github.com/<your account>/AVH_Labs.git
-```
-For convienience in this lab we will insert credentials directly into our source code. This is NOT an acceptable practive for actual deployments. In a later lab we will discuss a better practice for handling security credentials in IoT devices. 
-
-We will edit the aws_clientcredential.h and aws_client_credential_keys.h files to add the configuration specific to your AWS account settings. There are some scripts in the repository to help, but first we need to upload the certificate and private key generated when you created a new Thing in your account. The scripts depend on these files being in the $HOME/AVH_Labs/certs directory. If you are using VSCode, you can simple drag/drop the files from your local workstation folder where you have saved them. If you are using a command line shell you can upload the files using scp:
-
-From your local workstation:
+You can now build the project using the cmsis-toolbox utility 'cbuild'.
 
 ```
-cd /path/to/where/you/saved/the/files
-scp <hash>-certificate.pem.crt ubuntu@<ip address of EC2 instance>:AVH_Labs/certs/
-scp <hash>-private.pem.key ubuntu@<ip address of EC2 instance>:AVH_Labs/certs/
+cd $HOME/AVH_Labs
+cbuild.sh demo.VHT_MPS3_Corstone_SSE-300.cprj
 ```
-
-Several settings will be needed that are specific to your AWS Account. Edit the file ./certs/secrets.txt and enter values from you account settings.
-
-- AWS_ACCESS_KEY_ID = 
-- AWS_SECRET_ACCESS_KEY = 
-- AWS_DEFAULT_REGION = 
-- AWS_IAM_PROFILE = 
-- AWS_S3_BUCKET_NAME = 
-- AWS_SECURITY_GROUP_ID = 
-- AWS_SUBNET_ID = 
-- IOT_THING_NAME = 
-- MQTT_BROKER_ENDPOINT = 
-
-Then return to the shell in the EC2 instance. A script is provided that will append secrets.txt with the certificate and key values and then apply the changes to the include files.
+You should see many lines of compiling scroll past, but at the end you should see:
 
 ```
-cd $HOME/AVH_Labs/certs
-./edit-creds.sh
+cbuild.sh finished successfully!
 ```
 
-After running the edit-creds.sh script, you can confirm the files have been updated:
+It is time to run the image using the AVH emulator. Before starting the emulator, open the AWS Console and navigate to the IoT Core service page. From the left column, select the MQTT test client. Enter a topic filter '#' and then expand the Additional configuration list. Choose 'Display payloads as strings (more accurate)' and then click Subscribe. Keep this tab open in your browser to see MQTT messages sent from the application.
 
-- $HOME/AVH_Labs/amazon-freertos/demos/include/aws_clientcredential.h
-- $HOME/AVH_Labs/amazon-freertos/demos/include/aws_clientcredential_keys.h
+Now return to the shell in the EC2 instance and execute the following code. Or run ./scripts/run300.sh
 
-Keep the files produced in $HOME/certs. You will need them again later.
+```
+cd $HOME/AVH_Labs
+VHT_MPS3_Corstone_SSE-300 \
+-C mps3_board.visualisation.disable-visualisation=1 \
+-C mps3_board.telnetterminal0.start_telnet=0 \
+-C mps3_board.uart0.out_file=- \
+-a Objects/image.axf
+```
+
+After the emulator starts and loads the image file, you will see messages begin to scroll up.
+Watch the MQTT test client log in the browser. After the demo completes, you can press Ctrl-C in the shell to terminate the emulator.

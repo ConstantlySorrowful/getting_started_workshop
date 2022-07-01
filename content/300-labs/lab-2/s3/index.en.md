@@ -1,40 +1,57 @@
 ---
-title : "Lab 2: Building and running code with Arm Virtual Hardware (Step 3)"
+title : "Lab 2: Building and running code with AVH (Step 3)"
 weight : 3
 ---
 
-## Install CMSIS-Packs
+## Fork the examples repository in GitHub
 
-We will need several CMSIS-Packs installed for the workshop labs. Although some will have already been installed when the AMI was prepared, we can install any additional as needed using the cpackget command.
+Open a browser and navigate to [AVH_Labs](https://github.com/ConstantlySorrowful/AVH_Labs). In top/right select **Fork**. A copy of this repository needs to be added to your own GitHub account to make changes and configure the CI/CD workflows.
 
-Create a script file to add the CMSIS-Packs we will need in the workshop.
+## Clone example code from GitHub
+
+Now we are ready to get started with some example code. In this step we will clone a repository from GitHub. This repository contains a project that implements MQTT Mutual Authentication with FreeRTOS and is configured to use CMSIS-Packs. We will then compile the project using the command line tools from the cmsis-toolbox we installed earlier.
+
+
+Open a terminal to the EC2 instance and follow these steps.
 
 ```
-mkdir -p $HOME/bin
-cat << EOF > $HOME/bin/addcpacks.sh
-#!/bin/bash
-cpackget -q pack add -a ARM::CMSIS-Driver
-cpackget -q pack add -a ARM::CMSIS-FreeRTOS@10.4.6
-cpackget -q pack add -a ARM::mbedTLS@1.7.0
-cpackget -q pack add -a AWS::backoffAlgorithm@1.0.0-Beta
-cpackget -q pack add -a AWS::coreMQTT@1.1.0-Beta
-cpackget -q pack add -a AWS::coreMQTT_Agent@1.0.1-Beta
-cpackget -q pack add -a AWS::corePKCS11@3.0.0-Beta
-cpackget -q pack add -a AWS::FreeRTOS-Plus-TCP@2.3.2-Beta
-cpackget -q pack add -a Arm-Packs::PKCS11
-cpackget -q pack add -a MDK-Packs::IoT_Socket
-cpackget -q pack add -a Keil::V2M-MPS2_CMx_BSP@1.8.0
-cpackget -q pack add -a ARM::V2M_MPS3_SSE_300_BSP@1.2.0
-cpackget -q pack add -a NXP::MIMXRT1052_DFP@13.1.0
-cpackget -q pack add -a NXP::EVKB-IMXRT1050_BSP@13.1.0
-cpackget -q pack add -a Keil::IMXRT1050-EVKB_BSP@1.0.0
-cpackget -q pack add -a Keil::iMXRT105x_MWP@1.4.0
-cpackget -q pack add -a AWS::AWS_IoT_Device_Shadow@1.0.2-Beta
-cpackget -q pack add -a AWS::coreJSON@3.0.0-Beta
-cpackget -q pack add -a AWS::AWS_IoT_Jobs@1.1.0-Beta
-cpackget -q pack add -a AWS::AWS_IoT_Device_Defender@1.1.0-Beta
-EOF
-
-chmod +x $HOME/bin/addcpacks.sh
-$HOME/bin/addcpacks.sh
+cd $HOME
+git clone https://github.com/<your account>/AVH_Labs.git
 ```
+For convienience in this lab we will insert credentials directly into our source code. This is NOT an acceptable practive for actual deployments. In a later lab we will discuss a better practice for handling security credentials in IoT devices. 
+
+We will edit the aws_clientcredential.h and aws_client_credential_keys.h files to add the configuration specific to your AWS account settings. There are some scripts in the repository to help, but first we need to upload the certificate and private key generated when you created a new Thing in your account. The scripts depend on these files being in the $HOME/AVH_Labs/certs directory. If you are using VSCode, you can simple drag/drop the files from your local workstation folder where you have saved them. If you are using a command line shell you can upload the files using scp:
+
+From your local workstation:
+
+```
+cd /path/to/where/you/saved/the/files
+scp <hash>-certificate.pem.crt ubuntu@<ip address of EC2 instance>:AVH_Labs/certs/
+scp <hash>-private.pem.key ubuntu@<ip address of EC2 instance>:AVH_Labs/certs/
+```
+
+Several settings will be needed that are specific to your AWS Account. Edit the file ./certs/secrets.txt and enter values from you account settings.
+
+- AWS_ACCESS_KEY_ID = 
+- AWS_SECRET_ACCESS_KEY = 
+- AWS_DEFAULT_REGION = 
+- AWS_IAM_PROFILE = 
+- AWS_S3_BUCKET_NAME = 
+- AWS_SECURITY_GROUP_ID = 
+- AWS_SUBNET_ID = 
+- IOT_THING_NAME = 
+- MQTT_BROKER_ENDPOINT = 
+
+Then return to the shell in the EC2 instance. A script is provided that will append secrets.txt with the certificate and key values and then apply the changes to the include files.
+
+```
+cd $HOME/AVH_Labs/certs
+./edit-creds.sh
+```
+
+After running the edit-creds.sh script, you can confirm the files have been updated:
+
+- $HOME/AVH_Labs/amazon-freertos/demos/include/aws_clientcredential.h
+- $HOME/AVH_Labs/amazon-freertos/demos/include/aws_clientcredential_keys.h
+
+Keep these files and ./certs/secrets.txt for use in a later lab. Either download them to your local computer or upload them to an S3 bucket. If you are using VSCode, you can install the AWS Toolkit extension. The AWS extension will enable easy access to your S3 bucket.

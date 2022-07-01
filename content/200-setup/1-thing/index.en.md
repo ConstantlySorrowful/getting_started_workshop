@@ -17,7 +17,7 @@ Open the AWS Console in your browser and navigate to the IoT Core service page.
 - Select Auto-generate a new certificate (recommended)
 - Select a policy or create a new one.
 
-**Be sure to download the certicate and private key. We will need then to configure the code.**
+**Be sure to download the certicate and private key. You will need then to configure the code.**
 
 ![things](/static/create-thing.png)
 

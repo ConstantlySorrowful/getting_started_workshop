@@ -5,7 +5,7 @@ weight : 2
 
 ### IAM - Create an Instance Role
 
-We will also need an EC2 instance Role. This allows EC2 instances to call AWS services on your behalf.
+You will also need an EC2 instance Role. This allows EC2 instances to call AWS services on your behalf.
 
 Open the AWS Console in your browser and navigate to the IAM service page. 
 

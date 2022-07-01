@@ -3,21 +3,35 @@ title : "Lab 2: Building and running code with AVH (Step 2)"
 weight : 2
 ---
 
-## Install latest version of cmsis-toolbox utilities
+## Install CMSIS-Packs
 
-Depending on the AMI version selected whe you launched the EC2 instance, you may want to update the cmsis-toolbox utilities.
+You will need several **CMSIS-Packs** installed for the workshop labs. Although some will have already been installed when the AMI was prepared, you can install any additional as needed using the **cpackget** command. The .cprj project file will also add any required packs so this script is not mandatory. This example of using **cpackget** is provided to show management of your pack repository. 
 
-Check for latest version here: https://github.com/Open-CMSIS-Pack/devtools/releases
-
-At this time the latest version is: 0.10.2. I recommend creating a $HOME/bin directory. Then download and unpack the file there. Also add the location to your PATH environment variable.
+Create a script file to add the CMSIS-Packs we will need in the workshop.
 
 ```
 mkdir -p $HOME/bin
-cd $HOME/bin
-rm -rf cmsis-toolbox-linux64*
-wget https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Ftoolbox%2F0.10.2/cmsis-toolbox-linux64.tar.gz
-tar xzf cmsis-toolbox-linux64.tar.gz
-echo 'PATH=$HOME/bin/cmsis-toolbox-linux64/bin:$PATH' >> $HOME/.bashrc
-```
+cat << EOF > $HOME/bin/addcpacks.sh
+#!/bin/bash
+cpackget -q pack add -a ARM.CMSIS-Driver
+cpackget -q pack add -a ARM.CMSIS-FreeRTOS.10.4.6
+cpackget -q pack add -a ARM.mbedTLS.1.7.0
+cpackget -q pack add -a AWS.backoffAlgorithm.1.0.0-Beta
+cpackget -q pack add -a AWS.coreMQTT.1.1.0-Beta
+cpackget -q pack add -a AWS.coreMQTT_Agent.1.0.1-Beta
+cpackget -q pack add -a AWS.corePKCS11.3.0.0-Beta
+cpackget -q pack add -a AWS.FreeRTOS-Plus-TCP.2.3.2-Beta
+cpackget -q pack add -a Arm-Packs.PKCS11
+cpackget -q pack add -a MDK-Packs.IoT_Socket
+cpackget -q pack add -a Keil.V2M-MPS2_CMx_BSP.1.8.0
+cpackget -q pack add -a ARM.V2M_MPS3_SSE_300_BSP.1.2.0
+cpackget -q pack add -a Keil.iMXRT105x_MWP.1.4.0
+cpackget -q pack add -a AWS.AWS_IoT_Device_Shadow.1.0.2-Beta
+cpackget -q pack add -a AWS.coreJSON.3.0.0-Beta
+cpackget -q pack add -a AWS.AWS_IoT_Jobs.1.1.0-Beta
+cpackget -q pack add -a AWS.AWS_IoT_Device_Defender.1.1.0-Beta
+EOF
 
-You will need to logout and back in or source the $HOME/.bashrc file to apply the PATH variable change.
+chmod +x $HOME/bin/addcpacks.sh
+$HOME/bin/addcpacks.sh
+```

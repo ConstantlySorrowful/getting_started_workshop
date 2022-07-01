@@ -14,6 +14,6 @@ weight : 300
 - [**Lab 6: Creating and Deploying Jobs**](/300-labs/lab-6)
 - [**Lab 7: Deploying Over The Air (OTA) Firmware Updates**](/300-labs/lab-7)
 
-# Check Back for New Content 
+### Check Back for New Content 
 
 This workshop is also still undergoing development. As the features of Arm Virtual Hardware, Keil Studio Cloud, and FreeRTOS integration of CMSIS-Packs continue to mature, new and improved labs will be added. Additional content is being added increnmentally. Please check back and watch for new content. If you have requested access using the email address provided, you will get notified automatically. Please report any issues encountered. We will endevor to update as quickly as possible.
