@@ -6,11 +6,5 @@ weight : 2
 The project is imported and set as the active project:
   ![AWS MQTT Demo project opened and set active](/static/avh_labs_in_ksc.png)
 
-Although you could now Just click the Build button in the IDE, two files need editing before you build the project.
-
-In ./amazon-freertos/demos/include:
-
-- **aws_clientcredential.h**
-
-- **aws_clientcredential_keys.h**
+Although you could now just click the Build button in the IDE, the two credentials files need editing before you build the project.
 

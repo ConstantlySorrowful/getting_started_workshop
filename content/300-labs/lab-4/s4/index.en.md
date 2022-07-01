@@ -3,14 +3,10 @@ title : "Lab 4: Moving your project to Keil Studio Cloud (KSC) (Step 4)"
 weight : 4
 ---
 
-## Add Custom Tasks
+## Build
 
-- Add a task for the IDE to run the edit-creds.sh script
-- Type Ctrl-Shift-P (or Cmd-Shift-P on a Mac) 
-- Search for Tasks: Configure Tasks (Global)
-- A new editor tab will open with /user/tasks.json
-- Copy the contents of ./certs/tasks.json in to /user/tasks.json
-
-![create tasks](/static/create_tasks.png)
-
-- Execute the "edit-creds" task. Ctrl-Shift-P -> Tasks: Run task - edit-creds
+- **Build** the project by clicking the build button: ![Build Button](/static/build_button.png)
+- The build should complete without errors. 
+- Finally, run the project on the AVH model clicking the run button: ![Run Button](/static/run_button.png)
+- You will see the debug messages in the **Output** window:
+  ![Output Window](/static/output_window.png)
