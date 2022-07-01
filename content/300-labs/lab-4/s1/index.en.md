@@ -11,4 +11,4 @@ Open [Keil Studio](https://studio.keil.arm.com) and go to **File - Import Projec
 Enter the URL to your repository:
   https://www.github.com/your_account/AVH_Labs.git
 
-A project name will be auto generated, but change it if desired. Then click Add Project.
+A project name will be auto generated, but change it to **AVH_Labs** to keep the same as in the EC2 instance. Then click Add Project.
