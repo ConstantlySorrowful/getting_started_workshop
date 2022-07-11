@@ -21,8 +21,9 @@ Open the AWS Console in your browser and navigate to the IAM service page.
     - AmazonS3FullAccess
     - AmazonSSMManagedInstanceCore
     - AmazonSSMFullAccess
-- And add Permission boundary:
-    - PowerUserAccess
+
+- Set Permission boundary: (Use a permissions boundary to control the maximum role permissions)
+  - PowerUserAccess
 
 Ensure the Trust Relationship looks like this:
 ```
@@ -39,7 +40,5 @@ Ensure the Trust Relationship looks like this:
     ]
 }
 ```
-
-![create-role](/static/create-role.png)
 
 Next give your Role a name and then click the Create role button at the bottom of the page.
