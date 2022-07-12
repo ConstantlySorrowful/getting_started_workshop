@@ -18,7 +18,7 @@ Open a terminal to the EC2 instance and follow these steps.
 cd $HOME
 git clone https://github.com/<your account>/AVH_Labs.git
 ```
-For convienience in this lab we will insert credentials directly into our source code. This is NOT an acceptable practive for actual deployments. In a later lab we will discuss a better practice for handling security credentials in IoT devices. 
+For convienience in this lab we will insert credentials directly into our source code. This is NOT an acceptable practice for actual deployments. In a later lab we will discuss a better practice for handling security credentials in IoT devices. 
 
 You will edit the aws_clientcredential.h and aws_client_credential_keys.h files to add the configuration specific to your AWS account settings. There are some scripts in the repository to help, but first you need to upload the certificate and private key generated when you created a new Thing in your account. The scripts depend on these files being in the $HOME/AVH_Labs/certs directory. If you are using VSCode, you can simple drag/drop the files from your local workstation folder where you have saved them. If you are using a command line shell you can upload the files using scp:
 

@@ -13,7 +13,7 @@ If you have stopped your EC2 instance after completing the previous lab, go to t
 Wait until the instance has completed startup and then open a terminal application or use VSCode to connect.
 
 ```
-$ ssh ubuntu@xx.xx.xx.xx
+$ ssh -i /path/to/avh-keypair.pem ubuntu@<public.ip.addr>
 ```
 
 Alternatively, you can use VSCode to connect.

@@ -8,10 +8,17 @@ You can now open the AWS Console and see you new EC2 instance starting up.
 
 ![avh_overview](/static/marketplace-9.png)
 
-Make note of the public IP address shown. You can now open a terminal application and from the command line you can ssh into your instance.
+- Make note of the public IP address shown.
+- (Mac or Linux) Open a terminal application.
+- (Windows) You can use Putty or your preferred SSH application.
+
+
+**(Mac or Linux)**
+If you have created a new ssh key (e.g. avh-keypair.pem) you must also set the file permissions before you can login to the EC2 instance.
 
 ```
-$ ssh ubuntu@xx.xx.xx.xx
+$ chmod 400 /path/to/avh-keypair.pem
+$ ssh -i /path/to/avh-keypair.pem ubuntu@<public.ip.addr>
 
 The authenticity of host '3.82.42.21 (3.82.42.21)' can't be established.
 ECDSA key fingerprint is SHA256:PWQO8CjGeBsSR+nH5ybJ8em/Tk2/UeF/+vUlEP2DEVE.
