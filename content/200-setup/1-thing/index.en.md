@@ -19,7 +19,7 @@ Open the AWS Console in your browser and navigate to the IoT Core Service page a
   - [New Policy Examples](https://docs.aws.amazon.com/iot/latest/developerguide/example-iot-policies.html)
 
 
-**Be sure to download the certicate and private key. You will need then to configure the code.**
+**Be sure to download the certicate and private key. You will need them to configure the code.**
 
 
 ![things](/static/create-thing.png)
