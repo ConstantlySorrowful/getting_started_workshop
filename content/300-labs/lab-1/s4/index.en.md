@@ -10,7 +10,7 @@ You can now open the AWS Console and see you new EC2 instance starting up.
 
 - Make note of the public IP address shown.
 - (Mac or Linux) Open a terminal application.
-- (Windows) You can use Putty or your preferred SSH application.
+- (Windows) You can use Putty or your preferred SSH application. [Step 5](/300-labs/lab-1/s5)
 
 
 **(Mac or Linux)**

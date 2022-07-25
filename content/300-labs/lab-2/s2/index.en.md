@@ -9,7 +9,7 @@ You will need several **CMSIS-Packs** installed for the workshop labs. Although 
 
 Create a script file to add the CMSIS-Packs we will need in the workshop.
 
-```
+```bash
 mkdir -p $HOME/bin
 cat << EOF > $HOME/bin/addcpacks.sh
 #!/bin/bash
