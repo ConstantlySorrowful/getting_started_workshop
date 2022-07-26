@@ -9,7 +9,7 @@ weight : 1
 The following (secret) configuration values need to be added to the repositories. 
 
 1. In your browser, navigate to the GitHub repository you have forked. 
-2. Select the Setting gear icon and then scroll down in the left column to find **Secrets/Actions**. 
+2. Select the **Setting** gear icon and then scroll down in the left column to find **Secrets/Actions**. 
 3. Then for each new value click **New repository secret**.
 
 ![github 1](/static/github-secrets-1.png)
