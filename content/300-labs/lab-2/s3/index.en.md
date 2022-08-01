@@ -5,7 +5,7 @@ weight : 3
 
 ## Fork the examples repository in GitHub
 
-Open a browser and navigate to [AVH_Workshop](https://github.com/ConstantlySorrowful/AVH_Workshop). In top/right select **Fork**. A copy of this repository needs to be added to your own GitHub account to make changes and configure the CI/CD workflows.
+Open a browser and navigate to [avh-workshop](https://github.com/aws-samples/avh-workshop). In top/right select **Fork**. A copy of this repository needs to be added to your own GitHub account to make changes and configure the CI/CD workflows.
 
 ## Clone example code from GitHub
 
@@ -16,7 +16,7 @@ Open a terminal to the EC2 instance and follow these steps.
 
 ```bash
 cd $HOME
-git clone https://github.com/<your account>/AVH_Workshop.git
+git clone https://github.com/<your account>/avh-workshop.git
 ```
 For convienience in this lab we will insert credentials directly into our source code. This is NOT an acceptable practice for actual deployments. In a later lab we will discuss a better practice for handling security credentials in IoT devices. 
 
@@ -26,8 +26,8 @@ From your local workstation:
 
 ```bash
 cd /path/to/where/you/saved/the/files
-scp <hash>-certificate.pem.crt ubuntu@<ip address of EC2 instance>:AVH_Labs/certs/
-scp <hash>-private.pem.key ubuntu@<ip address of EC2 instance>:AVH_Labs/certs/
+scp <hash>-certificate.pem.crt ubuntu@<ip address of EC2 instance>:avh-workshop/certs/
+scp <hash>-private.pem.key ubuntu@<ip address of EC2 instance>:avh-workshop/certs/
 ```
 
 Several settings will be needed that are specific to your AWS Account. Edit the file ./certs/secrets.txt and enter values from your account settings. Do not add spaces after the '='. These values are exported as shell environment variables.
@@ -70,14 +70,14 @@ Secret Name                    | Description
 Then return to the shell in the EC2 instance. A script is provided that will append secrets.txt with the certificate and key values and then apply the changes to the include files.
 
 ```bash
-cd $HOME/AVH_Workshop/certs
+cd $HOME/avh-workshop/certs
 ./edit-creds.sh
 ```
 
 After running the edit-creds.sh script, you can confirm the files have been updated:
 
-- $HOME/AVH_Workshop/mqtt_pub_sub/config_files/demo_config.h
-- $HOME/AVH_Workshop/mqtt_pub_sub/config_files/aws_clientcredential_keys.h
+- $HOME/avh-workshop/mqtt_pub_sub/config_files/demo_config.h
+- $HOME/avh-workshop/mqtt_pub_sub/config_files/aws_clientcredential_keys.h
 
 Keep these files and ./certs/secrets.txt for use in a later lab. Either download them to your local computer or upload them to an S3 bucket. If you are using VSCode, you can install the AWS Toolkit extension. The AWS extension will enable easy access to your S3 bucket.
 

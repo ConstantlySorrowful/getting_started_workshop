@@ -16,5 +16,3 @@ Now you can use the **checkout** task to switch branches.
 - Select **checkout** and then enter **shadows**
 - You can confirm the brach has changed to shadows by looking in ./config_files/aws_demo_config.h
 - About line 48 you should see: #define CONFIG_DEVICE_SHADOW_DEMO_ENABLED
-
-
