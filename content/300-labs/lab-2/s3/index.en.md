@@ -76,8 +76,8 @@ cd $HOME/avh-workshop/certs
 
 After running the edit-creds.sh script, you can confirm the files have been updated:
 
-- $HOME/avh-workshop/mqtt_pub_sub/config_files/demo_config.h
-- $HOME/avh-workshop/mqtt_pub_sub/config_files/aws_clientcredential_keys.h
+- $HOME/avh-workshop/amazon-freertos/demos/include/aws_clientcredential.h
+- $HOME/avh-workshop/amazon-freertos/demos/include/aws_clientcredential_keys.h
 
 Keep these files and ./certs/secrets.txt for use in a later lab. Either download them to your local computer or upload them to an S3 bucket. If you are using VSCode, you can install the AWS Toolkit extension. The AWS extension will enable easy access to your S3 bucket.
 
