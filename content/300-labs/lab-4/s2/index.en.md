@@ -6,5 +6,5 @@ weight : 2
 The project is imported and set as the active project:
   ![AWS MQTT Demo project opened and set active](/static/avh_in_ksc.png)
 
-Although you could now just click the Build button in the IDE, the two configuration files need editing before you build the project.
+Although you could now just click the Build button in the IDE, some configuration files need editing before you build the project.
 

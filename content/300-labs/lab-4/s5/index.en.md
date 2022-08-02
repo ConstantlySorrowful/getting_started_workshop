@@ -7,9 +7,9 @@ weight : 5
 
 Now we can edit a change to our code and trigger the GitHub actions to launch a build/test exectution.
 
-1. Open the app_main file in the editor window.
+1. Open the app_main.c file in the editor window.
 
-2. Insert a trivial code change. (e.g. At line 100 insert: status = -1;)
+2. Insert a trivial code change. (e.g. At line ~59 insert: status = -1;)
 
 ![build ksc](/static/ksc_edit.png)
 

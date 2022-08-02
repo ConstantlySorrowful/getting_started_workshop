@@ -5,7 +5,7 @@ weight : 4
 
 ### Build
 
-1. Select from the dropdown list for **Target Hardware**: **AVH_MPS3_Corestone-300**
+1. Select from the dropdown list for **Target Hardware**: **Corestone-SSE-300**
 
 2. Then click the **Build** button.
 

@@ -1,6 +1,6 @@
 ---
 title : "Lab 5: Using Device Shadows"
-weight : 2
+weight : 50
 ---
 
 # AWS IoT Device Shadows

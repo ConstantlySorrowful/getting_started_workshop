@@ -4,11 +4,13 @@ weight : 1
 ---
 
 Open [Keil Studio](https://studio.keil.arm.com) and go to **File - Import Project**:
+
   ![Import project dialog](/static/import_project.png)
 
 
 
-Enter the URL to your repository:
-  https://www.github.com/your_account/AVH_Workshop.git
+**Enter the URL to your forked repository: (Not aws-samples/avh-workshop)**
 
-A project name will be auto generated, but change it to **AVH_Workshop** to keep the same as in the EC2 instance. Then click Add Project.
+  https://www.github.com/**<your_account>**/avh-workshop.git
+
+A project name will be auto generated. If preferred you can change it: **avh-workshop** to keep the same as in the EC2 instance. Then click Add Project.

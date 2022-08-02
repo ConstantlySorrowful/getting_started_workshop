@@ -5,14 +5,14 @@ weight : 3
 
 ## Edit configuration files
 
-In ./mqtt_pub_sub/config_files/:
+In ./amazon-freertos/demos/include/:
 
-- **demo_config.h**
+- **aws_clientcredential.h**
 
 - **aws_clientcredential_keys.h**
 
 In an earlier lab you edited these files by running a script. You should have saved these files either on your local workstation or your S3 bucket. If you did not, they should still be available in your EC2 instance.
 
-Upload the saved credentials files into ./mqtt_pub_sub/config_files/. KSC supports Drag/Drop from your local PC or you can also use the AWS Toolkit extension to retrieve them from your S3 bucket.
+Upload the saved credentials files into **./amazon-freertos/demos/include/**. KSC supports Drag/Drop from your local PC or you can also use the AWS Toolkit extension to retrieve them from your S3 bucket.
 
 **Reminder: Do NOT commit the credentials files changes back to your github repository! This is a public repo. Anyone can see your private key!**

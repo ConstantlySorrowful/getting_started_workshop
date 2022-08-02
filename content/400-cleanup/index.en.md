@@ -3,7 +3,7 @@ title : "Cleanup"
 weight : 400
 ---
 
-# Shutdown and Cleanup AWS and Github Resources
+## Shutdown and Cleanup AWS and Github Resources
 
 - Be sure to Stop or Terminate EC2 instances used in the workshop.
   - [Terminate your instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html)
