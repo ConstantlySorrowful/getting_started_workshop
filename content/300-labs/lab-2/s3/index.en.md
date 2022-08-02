@@ -7,6 +7,14 @@ weight : 3
 
 Open a browser and navigate to [avh-workshop](https://github.com/aws-samples/avh-workshop). In top/right select **Fork**. A copy of this repository needs to be added to your own GitHub account to make changes and configure the CI/CD workflows.
 
+![fork 1](/static/fork-1.png)
+
+1. Select your account from the dropdown list for **Owner**.
+2. Uncheck the box for **Copy the main branch only**. (You will need all the branches.)
+3. Click **Create fork**.
+
+![fork 2](/static/fork-2.png)
+
 ## Clone example code from GitHub
 
 Now we are ready to get started with some example code. In this step we will clone a repository from GitHub. This repository contains a project that implements MQTT Mutual Authentication with FreeRTOS and is configured to use CMSIS-Packs. We will then compile the project using the command line tools from the cmsis-toolbox we installed earlier.
