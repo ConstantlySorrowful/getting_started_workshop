@@ -5,9 +5,10 @@ weight : 2
 
 The workflow jobs and steps are contained in the following files:
 
-- $HOME/AVH_Labs/.github/workflows/c300_virtual_hardware.yml
-- $HOME/AVH_Labs/avh.yml
-- $HOME/AVH_Labs/build.py
+- $HOME/avh-workshop/.github/workflows/c300_virtual_hardware.yml
+- $HOME/avh-workshop/avh.yml
+- $HOME/avh-workshop/build.py
+- $HOME/avh-workshop/vht_config.txt
 
 These can be modified later as needed to modify the configuration and add more test cases. For now you can keep them as-is.
 
