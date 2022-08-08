@@ -15,6 +15,8 @@ Now you can build the Jobss demo application. You use the same steps as in the p
 
 2. The build should complete without errors. 
 
+## Run
+
 3. Finally, run the project on the AVH model clicking the run button: 
 
 ![Run Button](/static/run_button.png)

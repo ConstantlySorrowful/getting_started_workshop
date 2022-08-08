@@ -16,6 +16,6 @@ Wait until the instance has completed startup and then open a terminal applicati
 ssh -i /path/to/avh-keypair.pem ubuntu@<public.ip.addr>
 ```
 
-Alternatively, you can use VSCode to connect.
+Alternatively, you can use VSCode to connect. ([See Lab 1: Step 6](/300-labs/lab-1/s6))
 
 ![vscode-ssh](/static/vscode-ssh-2.png)

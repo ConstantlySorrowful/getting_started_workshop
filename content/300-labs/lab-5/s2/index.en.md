@@ -15,6 +15,8 @@ Now you can build the Shadows demo application. You use the same steps as in the
 
 2. The build should complete without errors. 
 
+## Run
+
 3. Finally, run the project on the AVH model clicking the run button: 
 
 ![Run Button](/static/run_button.png)
@@ -22,6 +24,8 @@ Now you can build the Shadows demo application. You use the same steps as in the
 4. You will see the debug messages in the **Output** window:
 
 5. This time you will see the application subscribing to Shadow reserved topic and detecting updates.
+
+## Test
 
 6. You can optionally confirm by opening the AWS Console -> MQTT Test client and subscribe to topic '#'.
 

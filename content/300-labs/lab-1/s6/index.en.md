@@ -3,7 +3,7 @@ title : "Lab 1: Launch an EC2 Instance with AVH AMI (Optional: Step 6)"
 weight : 16
 ---
 
-You can also use VS Code with the Remote SSH Extension to access the EC2 instance. If you already have VS Code installed on you workstation this extension will provide a better experience for editing files in later labs. 
+You can also use VS Code with the Remote SSH Extension to access the EC2 instance. If you already have VS Code installed on your workstation this extension will provide a better experience for editing files in later labs. 
 
 To install the extension select the extensions icon along the left side. ![vscode icon](/static/vscode-ext-icon.png)
 
@@ -18,7 +18,7 @@ Click the icon and then select **Connect to Host** or **Connect Current Window t
 
 ![vscode connect](/static/vscode-connect.png)
 
-You can then choose to enter you connection command directly or edit you ssh config file (e.g. $HOME/.ssh/config)
+You can then choose to enter you connection command directly or edit your ssh config file (e.g. $HOME/.ssh/config)
 
 Add an entry in your $HOME/.ssh/config file similar to this:
 

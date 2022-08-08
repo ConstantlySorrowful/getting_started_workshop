@@ -9,6 +9,7 @@ On this page there are several selection options. For the Action, **Launch from 
 
 Scroll down to select the VPC and subnet settings.  Your default VPC/subnet should already have automatic public IP address assignment enabled, however if you have multiple subnets configured be sure to select one that is enabled for public IP addresses. [See VPC public IP addresses](/300-labs/lab-1/s3/publicip)
 
+Also, not all instance region/type/subnet combinations are supported. Recommended: (us-east-1, c5large or t3large, subnets a,b,c,d,f - subnet 'e' in us-east-1 is not supported.) 
 
 ![avh_overview](/static/marketplace-6.png)
 

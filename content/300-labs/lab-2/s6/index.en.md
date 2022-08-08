@@ -1,28 +1,52 @@
 ---
-title : "Lab 3: Automate with GitHub Actions CI/CD Workflows (Step 1)"
-weight : 1
+title : "Lab 2: Building and running code with AVH (Step 6)"
+weight : 6
 ---
 
+## Collect settings
 
-## GetHub Secrets - Values 
+Several settings will be needed that are specific to your AWS Account. Edit the file ./certs/secrets.txt and enter values from your account settings. Do not add spaces after the '='. These values are exported as shell environment variables.
 
-The following (secret) configuration values need to be added to the repositories. 
+Example:
 
-1. In your browser, navigate to the GitHub repository you have forked. 
-2. Select the **Setting** gear icon and then scroll down in the left column to find **Secrets/Actions**. 
+- AWS_ACCESS_KEY_ID=AKIA3WVBDNxxxxxxxxxx
+- AWS_SECRET_ACCESS_KEY=MAgot1dwqPULMo7AWvVH6TRA30cExxxxxxxxxxxx
+- AWS_DEFAULT_REGION=us-east-1
+- AWS_IAM_PROFILE=armvtRole
+- AWS_S3_BUCKET_NAME=myUniqueBucketName
+- AWS_SECURITY_GROUP_ID=sg-xxxxxxxx
+- AWS_SUBNET_ID=subnet-0d38638917xxxxxxx
+- IOT_THING_NAME=armvt
+- MQTT_BROKER_ENDPOINT=a2sgxxxxxxxxxx-ats.iot.us-east-1.amazonaws.com
 
-![github 1](/static/github-secrets-1.png)
+**AWS_ACCESS_KEY_ID** and **AWS_SECRET_ACCESS_KEY** will come from the AWS Console - IAM service page.
+The secret key is only visible at the time you create it. Create a new set if you have not yet created any or did not save them earlier.
 
-Here you will enter the values we saved earlier in ./certs/secrets.txt. 
+See [Manging access keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey) for more details.
 
-3. Then for each new value click **New repository secret**.
+Each of the following were created in the **Setup** section of the workshop.
 
-![github 0](/static/github-secrets-0.png)
+- **AWS_IAM_PROFILE** is the **Role** you created earlier.
+- **AWS_S3_BUCKET_NAME**
+- **IOT_THING_NAME**
 
-Add a name/value pair for each item. Do not add quotes to the values entered. The script used earlier (edit-creds.sh) added quotes to the generated values for **CLIENT_CERTIFICATE_PEM** and **CLIENT_PRIVATE_KEY**. Please remove them when entering them as a GitHub Secret.
+**MQTT_BROKER_ENDPOINT** can be found in the IoT Core service page:
 
-![github 2](/static/github-secrets-2.png)
+![settings 0](/static/settings-0.png)
+![settings 1](/static/settings-1.png)
 
+
+
+**AWS_SECURITY_GROUP_ID** and **AWS_SUBNET_ID** can be found on your EC2 instance page. Select the **Security** tabs to locate the settings values needed.
+
+![settings 2](/static/settings-2.png)
+
+Do not enter values for the following. They will be added automatically by the script below.
+
+- **CLIENT_CERTIFICATE_PEM**
+- **CLIENT_PRIVATE_KEY_PEM**
+
+See this table for more information:
 
 Secret Name                    | Description
 :------------------------------|:--------------------

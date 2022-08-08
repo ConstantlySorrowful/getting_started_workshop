@@ -25,7 +25,7 @@ Now we can edit a change to our code and trigger the GitHub actions to launch a 
 
 ![ksc commit](/static/ksc-commit.png)
 
-6. Finally push your changes to GitHub by selecting the **...* dropdown menu and clicking **Push*.
+6. Finally push your changes to GitHub by selecting the **...** dropdown menu and clicking **Push**.
 
 ![ksc push](/static/ksc-push.png)
 
