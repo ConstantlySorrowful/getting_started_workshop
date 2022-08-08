@@ -37,6 +37,8 @@ We will need a few resources provisioned in AWS.
 
 See [New Policy Examples](https://docs.aws.amazon.com/iot/latest/developerguide/example-iot-policies.html) for more details about policies.
 
+Below is an example of a very permissive policy. This should NOT be used in a production environment. It is better to restrict access to only the permissions needed by you device/application requirements. Please see examples of policies restricting access to specific regions, accounts, devices, capabililites, etc. here: https://docs.aws.amazon.com/iot/latest/developerguide/example-iot-policies.html
+
 ![create thing 7](/static/iot-core-create-thing-7.png)
 
 ```json
