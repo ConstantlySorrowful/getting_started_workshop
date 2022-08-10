@@ -23,5 +23,7 @@ Now you can build the Jobss demo application. You use the same steps as in the p
 
 4. You will see the debug messages in the **Output** window:
 
+![jobs output](/static/output_window-2.png)
+
 5. This time you will see the application initiating a jobs task waiting for a new job request. You will create a job request in the next step.
 
