@@ -11,11 +11,19 @@ Scroll down to select the VPC and subnet settings.  Your default VPC/subnet shou
 
 Also, not all instance region/type/subnet combinations are supported. Recommended: (us-east-1, c5large or t3large, subnets a,b,c,d,f - subnet 'e' in us-east-1 is not supported.) 
 
+**Reminder** Be sure to provision resources (e.g. EC2 Instance, S3 Bucket, etc.) in the same region.
+
 ![avh_overview](/static/marketplace-6.png)
 
-There should be an auto generated security group listed. This will have the access settings we need. Add an ssh key pair that you already have registered in your account or create a new one. Then click "Launch".
+There should be an auto generated security group listed. This will have the access settings we need. 
+
+Add an ssh key pair that you already have registered in your account or create a new one. Then click **Launch**.
 
 ![avh_overview](/static/marketplace-7.png)
+
+If a default security group is not available, select the **Create New Based on Seller Settings** button. A new page will provide options for name and description. The only port needed for access is for SSH. Then click **Save**. After returning to the previous page click **Launch**.
+
+![avh_mkt-10](/static/marketplace-10.png)
 
 You should now see a page confirming you have successfully launched the EC2 instance with the custom AMI.
 

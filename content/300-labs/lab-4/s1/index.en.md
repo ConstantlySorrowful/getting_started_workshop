@@ -16,12 +16,14 @@ When you open Keil Studio Cloud for the first time you will need to enable acces
 
 ![github profile 2](/static/github-profile-2.png)
 
-4. Now you can go to **File - Import Project** to clone your repository
+4. Now you can go to **File - Clone...** to clone your repository
 
-  ![Import project dialog](/static/import_project.png)
+![clone project](/static/clone.png)
+
+![Import project dialog](/static/import_project.png)
 
 **Enter the URL to your forked repository: (Not aws-samples/avh-workshop)**
 
-  https://www.github.com/**<your_account>**/avh-workshop.git
+  https://www.github.com/your_account/avh-workshop.git
 
 A project name will be auto generated. If preferred you can change it: **avh-workshop** to keep the same as in the EC2 instance. Then click Add Project.

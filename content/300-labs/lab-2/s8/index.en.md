@@ -8,7 +8,7 @@ weight : 8
 You can now build the project using the cmsis-toolbox utility 'cbuild'.
 
 ```bash
-cd $HOME/AVH_Labs
+cd $HOME/avh-workshop
 cbuild.sh demo.VHT_MPS3_Corstone_SSE-300.cprj
 ```
 You should see many lines of compiling scroll past, but at the end you should see:
@@ -33,7 +33,7 @@ Keep this tab open in your browser to see MQTT messages sent from the applicatio
 Now return to the shell in the EC2 instance and execute the following code. Or run ./scripts/run300.sh
 
 ```bash
-cd $HOME/AVH_Labs
+cd $HOME/avh-workshop
 VHT_MPS3_Corstone_SSE-300 \
 -C mps3_board.visualisation.disable-visualisation=1 \
 -C mps3_board.telnetterminal0.start_telnet=0 \

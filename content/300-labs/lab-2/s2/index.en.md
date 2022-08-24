@@ -31,6 +31,17 @@ CMSIS-Pack is an effective packaging technology that currently supports close to
 
 You will need several **CMSIS-Packs** installed for the workshop labs. Although some will have already been installed when the AMI was prepared, you can install any additional as needed using the **cpackget** command. The .cprj project file will also add any required packs so this script is not mandatory. This example of using **cpackget** is provided to show management of your pack repository. 
 
+New packs are continually being developed. It is generally a good idea to update your local index occasionally.
+
+```bash
+cpackget index -f https://www.keil.com/pack/index.pidx
+```
+Or if you have installed a newer version of the [cmsis-toolbox](https://github.com/Open-CMSIS-Pack/devtools/releases) a slightly different syntax will work.
+
+```bash
+cpackget update-index
+```
+
 Create a script file to add the CMSIS-Packs we will need in the workshop.
 
 ```bash
