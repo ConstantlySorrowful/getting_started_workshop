@@ -19,15 +19,14 @@ weight : 4
 
 ![run ksc](/static/run_ksc.png)
 
-### Stop
-
-4. After letting the program run briefly you can stop it by pressing Ctrl-Shift-P (Or Cmd-Shift-P on a Mac) and selecting **Stop all VHT run jobs**
-
-
-![stop ksc](/static/stop-ksc.png)
-
 ### Output
 
 The Output panel will show the emulator running and connecting to AWS IoT Core.
 
 ![ksc output](/static/ksc_output.png)
+
+### Stop
+
+4. After letting the program run briefly you can stop it by pressing the **Cancel** button appearing in your **Output** panel.
+
+![stop cancel](/static/stop-cancel.png)
