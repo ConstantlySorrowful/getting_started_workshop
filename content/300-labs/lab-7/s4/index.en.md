@@ -13,11 +13,9 @@ weight : 4
 
 ![edit secrets](/static/edit-secrets.png)
 
-3. Now let's add a **task** to the IDE to help us apply these configuration items into the code. Open the **tasks.json** file and select all the text. Then use Ctrl-C (or CMD-C on a Mac) to copy the text to the copy buffer. 
+3. Add a **task** to the IDE to help us apply these configuration items into the code. Open the **tasks.json** file and select all the text. Then use Ctrl-C (or CMD-C on a Mac) to copy the text to the copy buffer. 
 
-Now press Ctrl-Shift-P to open the Command tool and search for **Task: Configure Tasks...**
-
-Paste the contents of the copy buffer into the new tasks.json file. (Ctrl-V)
+Press Ctrl-Shift-P to open the Command tool and search for **Task: Configure Tasks...**. This will open a new **tasks.json** file. (A system file.) Paste the contents of the copy buffer into the new **tasks.json** file window. (Ctrl-V). This is adding 2 new tasks to the IDE. (**creds** and **bash**)
 
 4. Now you can run the **creds** task using Ctrl-Shift-P again. This time searching for **Task: Run Task...** and then selecting the **creds** task. This will apply the config values to the code before building and running.
 

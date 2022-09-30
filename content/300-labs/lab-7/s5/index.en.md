@@ -15,7 +15,7 @@ weight : 5
 
 ### Run/Debug
 
-3. Finally, run or debug the project on the STM32U5 board connected via USB byclicking the run or debug buttons:
+3. Finally, run or debug the project on the STM32U5 board connected via USB by clicking the run or debug buttons:
 
 ![run u5](/static/run_u5.png)
 
