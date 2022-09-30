@@ -8,6 +8,6 @@ The project is imported and set as the active project:
 
 ## Create a new folder
 
-Create a new folder outside you project where you can keep files not specific to your project. Name this new folder "local". Right click in the blank area of the Explorer section of the IDE to open the menu. Select **New Folder**.
+Create a new folder outside you project where you can keep files not specific to your project. Name this new folder **local**. Right click in the blank area of the Explorer section of the IDE to open the menu. Select **New Folder**.
 
 ![local folder](/static/local-folder.png)
