@@ -11,6 +11,7 @@ weight : 300
 - [**Lab 4: Moving your project to Keil Studio Cloud (KSC)**](/300-labs/lab-4)
 - [**Lab 5: Using Device Shadows**](/300-labs/lab-5)
 - [**Lab 6: Creating and Deploying Jobs**](/300-labs/lab-6)
+- [**Lab 7: Working With STM32U5 in Keil Studio Cloud (KSC)**](/300-labs/lab-7)
 
 ### Check Back for New Content 
 
