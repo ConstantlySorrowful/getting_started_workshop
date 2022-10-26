@@ -1,6 +1,9 @@
 ---
-title : "Lab 7: Working With STM32U5 in Keil Studio Cloud (KSC)"
+title : "Lab 7: Creating and Deploying Jobs"
 weight : 70
 ---
 
-Keil Studio Cloud is a browser based IDE for developing embedded software. In this lab you will import a Github repository into Keil Studio Cloud (KSC). You will then be able to build, deploy, run, and debug the code from within your browser.
+
+# AWS IoT Device Jobs
+
+In this lab you will continue in Keil Studio Cloud (KSC) to learn about using **AWS IoT Device Jobs**. AWS IoT Jobs enable you to define a set of remote operations that can be sent to and run on one or more devices connected to AWS IoT. For example, you can define a job that instructs a set of devices to download and install applications, run firmware updates, reboot, rotate certificates, or perform remote troubleshooting operations.

@@ -1,6 +1,6 @@
 ---
-title : "Lab 2: Building and running code with AVH"
+title : "Lab 2: Launch an EC2 Instance with AVH AMI"
 weight : 20
 ---
 
-In this lab you will use the EC2 instance you launched in the prior lab to clone a repository from GitHub. You will then compile the project and finally run the application using the Arm Virtual Hardware emulator for the Corstone-300.
+In this lab we will launch an EC2 instance with the custom AMI prepared by Arm. This AMI is configured with the tools needed to build and test the development of embedded applications using FreeRTOS, CMSIS-Packs, and AWS IoT SDKs. You can then run and debug on emulators for the ARM architecture of your product.

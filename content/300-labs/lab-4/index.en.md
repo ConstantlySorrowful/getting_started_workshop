@@ -1,6 +1,7 @@
 ---
-title : "Lab 4: Moving your project to Keil Studio Cloud (KSC)"
-weight : 40
+title : "Lab 3: Automate with GitHub Actions CI/CD Workflows"
+weight : 30
 ---
 
-In this lab you will import the same Github repository into Keil Studio Cloud (KSC). In the browser based IDE you will be able to build and run the code just as you did in the EC2 instance. KSC is also using an EC2 instance, however you will not need to manually setup as many details before running your code.
+In this lab you will enable the GitHub workflow to automate the build and test. Here you will enter the GitHub Secrets needed to access your AWS account to provision and launch an EC2 instance to run the build. Once the build/test cycle has completed, the EC2 instance will be automatically terminated.
+ 

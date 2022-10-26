@@ -1,25 +1,46 @@
 ---
-title : "Lab 7: Working With STM32U5 in Keil Studio Cloud (KSC) (Step 4)"
+title : "Lab 7: Creating and Deploying Jobs (Step 4)"
 weight : 4
 ---
 
-### Edit Configuration
+## Create a Job
 
-1. Return to the **Expolrer** view and expand the **certs** folder.
+1. Open the AWS Console in your browser and navigate to **AWS Iot -> Manage -> Remote Actions -> Jobs**. Click the **Create job** button.
 
-![explorer](/static/explorer-view.png)
+![create job 1](/static/create-job-1.png)
 
-2. Open the **secrets.txt** file in the editor window and append each line with values for your environment.
+2. Select **Create custom job** and click **Next**.
 
-![edit secrets](/static/edit-secrets.png)
+![create job 2](/static/create-job-2.png)
 
-3. Add a **task** to the IDE to help us apply these configuration items into the code. Open the **tasks.json** file and select all the text. Then use Ctrl-C (or CMD-C on a Mac) to copy the text to the copy buffer. 
+3. Give your job a name and optionally add a description. Click **Next**.
 
-Press Ctrl-Shift-P to open the Command tool and search for **Task: Configure Tasks...**. This will open a new **tasks.json** file. (A system file.) Paste the contents of the copy buffer into the new **tasks.json** file window. (Ctrl-V). This is adding 2 new tasks to the IDE. (**creds** and **bash**)
+![create job 3](/static/create-job-3.png)
 
-![](/static/config-tasks.png)
+4. From the dropdown list you should see your configured device. Select the device.
 
-4. Now you can run the **creds** task using Ctrl-Shift-P again. This time searching for **Task: Run Task...** and then selecting the **creds** task. This will apply the config values to the code before building and running.
+![create job 4](/static/create-job-4.png)
 
-An additional **task** is also added to open a **bash** shell if needed.
+5. Select the job document you uploaded to your S3 bucket. Use the **Browse S3** button to find it.
+
+![create job 5](/static/create-job-5.png)
+
+6. Select **Snapshot** and then click **Submit**.
+
+![create job 6](/static/create-job-6.png)
+
+7. Return to Keil Studio Cloud tab in your browser. You may need to restart your application. (It may have timeout by now.)
+
+8. Check **Output** panel for success.
+
+![job output](/static/job-output.png)
+
+9. Also confirm Job completion in AWS Console.
+
+![job output 2](/static/job-output-2.png)
+
+
+### Lab Summary
+
+In this lab we have selected a different branch in the git repository to examine **AWS IoT Device Jobs**. You then rebuilt the project in KSC. With git command support built into KSC the same CI/CD workflow is also triggered in KSC by simply commiting and pushing code changes. The GitHub actions will trigger, but will fail the test case because the build.py script has not been updated to handle different output. However, this labs also requires a job creation and deployment step. This is also not automated at this time. In future labs we can extend the CI/CD workflow to include this automation.
 

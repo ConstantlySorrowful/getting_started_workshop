@@ -1,21 +1,16 @@
 ---
-title : "Lab 2: Building and running code with AVH (Step 1)"
-weight : 1
+title : "Lab 1: Launch an EC2 Instance with AVH AMI (Step 1)"
+weight : 11
 ---
 
+## In your browser, navigate to AWS marketplace
+https://aws.amazon.com/marketplace/search/results?searchTerms=arm
 
-## Use SSH Command to Connect to EC2 Instance
+Search for **arm** and the first item in the results should be for the Arm Virtual Hardware.
 
-If you have stopped your EC2 instance after completing the previous lab, go to the AWS Console in your browser and open the EC2 service page. Then select the instance you created in Lab-1 and set the **Instance state** to start.
+![avh_overview](/static/marketplace-1.png)
 
-![instance_restart](/static/restart-ec2.png)
+Click the link (**Arm Virtual Hardware** highlighted in blue) and continue to the next page. Here you can read the product overview information and then continue. Then click the **Continue to Subscribe** button.
 
-Wait until the instance has completed startup and then open a terminal application or use VSCode to connect.
+![avh_overview](/static/marketplace-2.png)
 
-```bash
-ssh -i /path/to/avh-keypair.pem ubuntu@<public.ip.addr>
-```
-
-Alternatively, you can use VSCode to connect. ([See Lab 1: Step 6](/300-labs/lab-1/s6))
-
-![vscode-ssh](/static/vscode-ssh-2.png)

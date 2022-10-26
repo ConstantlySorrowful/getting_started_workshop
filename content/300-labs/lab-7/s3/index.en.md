@@ -1,26 +1,24 @@
 ---
-title : "Lab 7: Working With STM32U5 in Keil Studio Cloud (KSC) (Step 3)"
+title : "Lab 7: Creating and Deploying Jobs (Step 3)"
 weight : 3
 ---
 
-## Create a new certificate and attach a policy
+## Create a Job document
 
-1. Click the **AWS** icon on the left side of the IDE window to open the **AWS Toolkit**.
+1. On your local P.C. create a new text file. (Notepad, gedit, vim, etc.)
 
-![aws](/static/aws-icon.png)
+Insert the following JSON contents:
 
-2. Open the IoT Section and then click on the **+** symbol next to **Certificates** and then select the new **local** folder you created. Then click **Save certificate here**.
+```bash
+{ "action": "publish", "topic": "demo/jobs", "message": "Hello from AVH!" }
+```
+2. Save the file as **avh-workshop-job.json**
 
-![aws toolkit cert](/static/aws-tookit-cert.png)
+## Upload to your S3 bucket.
 
-3. Attach a policy (created earlier) and activate the new certificate.
+3. Navigate to S3 service page and select the bucket you created earlier. Then click **Upload**.
 
-![attach policy](/static/cert-attach-policy.png)
+![upload job doc 1](/static/upload-job-doc.png)
 
-4. Create a new thing. Select the **+** symbol next the **Things**. A prompt will appear to provide a name for your new thing.
-
-![new thing](/static/new-thing.png)
-
-5. Attach the certificate created earlier to your new thing.
-
-![thing attach cert](/static/thing-attach-cert.png)
+4. Click **Add files** and find the file saved on your local PC.
+![upload job doc 2](/static/upload-job-doc-2.png)

@@ -1,18 +1,28 @@
 ---
-title : "Lab 2: Building and running code with AVH (Step 5)"
-weight : 5
+title : "Lab 1: Launch an EC2 Instance with AVH AMI (Optional: Step 5)"
+weight : 15
 ---
 
-## Upload credentials
+**(Window - Putty)**
 
-For convienience in this lab we will insert credentials directly into our source code. This is NOT an acceptable practice for actual deployments. In a later lab we will discuss a better practice for handling security credentials in IoT devices. 
+If you have created a new ssh key (e.g. avh-keypair.pem) you must import it into putty key format. Open the PuttyGen application and select the Conversions tab and choose Import key.
 
-You will edit the **aws_client_credential.h** and **aws_client_credential_keys.h** files to add the configuration specific to your AWS account settings. There are some scripts in the repository to help, but first you need to upload the certificate and private key generated when you created a new Thing in your account. The scripts depend on these files being in the **$HOME/avh-workshop/certs** directory. If you are using VSCode with the Remote SSH extension you can use the drag/drop feature to upload files to the EC2 instance. If you are using a command line shell you can upload the files using scp:
+![Putty Import](/static/putty-import.png)
 
-From your local workstation:
+After importing the key click the **Save private key** button with file extension .ppk (e.g. avh-keypair.ppk)
 
-```bash
-cd /path/to/where/you/saved/the/files
-scp <hash>-certificate.pem.crt ubuntu@<ip address of EC2 instance>:avh-workshop/certs/
-scp <hash>-private.pem.key ubuntu@<ip address of EC2 instance>:avh-workshop/certs/
-```
+![Putty Save](/static/putty-save.png)
+
+Now open the Putty application and enter the public IP address in the Session configuration. Also ensure the connection type is set to SSH.
+
+![Putty Session](/static/putty-session.png)
+
+Then scroll down to the Connection -> SSH -> Auth configuration page. At the bottom click the browse button and find the saved ppk file. (Be sure to select the .ppk file instead of the .pem file.)
+
+![Putty Auth](/static/putty-auth.png)
+
+Now click the open button and you should see a new session window open and a prompt for **login as:**. Enter **ubuntu**.
+
+![Putty Login](/static/putty-login.png)
+
+You should now see your console connection to the EC2 instance open.

@@ -1,31 +1,38 @@
 ---
-title : "Lab 1: Launch an EC2 Instance with AVH AMI (Optional: Step 6)"
-weight : 16
+title : "Lab 1: Developing With Keil Studio Cloud (KSC) (Step 6)"
+weight : 6
 ---
 
-You can also use VS Code with the Remote SSH Extension to access the EC2 instance. If you already have VS Code installed on your workstation this extension will provide a better experience for editing files in later labs. 
+### Edit code changes
 
-To install the extension select the extensions icon along the left side. ![vscode icon](/static/vscode-ext-icon.png)
+Now we can edit a change to our code, build, test, and finally save our changes back to our GitHub repo.
 
-Search for remote ssh. It should be the first one in the list of similar extensions. Select the install button.
+1. Open ./amazon-freertos/demos/coreMQTT/mqtt_demo_mutual_auth.c in the editor. Then scrool to about line 972. You should see the function **prvMQTTPublishToTopic()**
 
-![avh_overview](/static/vscode-ssh.png)
+2. Insert a trivial code change. (e.g. At line ~986 replace: **mqttexampleMESSAGE** with a new string **"Hello, Constantly Sorrowful"**)
 
-After installing the extension you will see the **Open a Remote Window** icon in the bottom left corner.
-![remote icon](/static/vscode-rem-ssh-icon.png)
+![u5 edit hello](/static/u5_edit_hello.png)
 
-Click the icon and then select **Connect to Host** or **Connect Current Window to Host**.
+3. Rebuild the project to confirm the code change has not introduced an error.
 
-![vscode connect](/static/vscode-connect.png)
+You will notice when you run the code that the output string is shorter than expected. This is because the code change did not update the string length at line 987. (Unless you caught the mistake and fixed it yourself!)
 
-You can then choose to enter you connection command directly or edit your ssh config file (e.g. $HOME/.ssh/config)
+### Commit to Github repository
 
-Add an entry in your $HOME/.ssh/config file similar to this:
+4. Stage your changes by selecting the **Source Control** icon on the left and the clicking the **+** symbol next to the **mqtt_demo_mutual_auth.c** file.
 
-```
-Host avh
-  HostName 54.224.224.183
-  User ubuntu
-  IdentityFile ~/.ssh/avh-keypair.pem
-```
-Make sure to update the IP address to match your EC2 instance address.
+**Only stage and commit the single file. Although other files will have been changed, these should not be committed to your repo with confidential configuration values. Your repo is public and anyone can see your secrets!**
+
+![u5 stage](/static/u5_stage.png)
+
+5. Commit your changes by entering a commit message describing your change in the text box and then clicking the checkmark symbol.
+
+![ksc commit](/static/u5_commit.png)
+
+6. Finally push your changes to GitHub by selecting the **...** dropdown menu and clicking **Push**.
+
+![ksc push](/static/u5_push.png)
+
+### Lab Summary
+
+In this lab we have imported a project from GitHub into Keil Studio Cloud. We have compiled the code and deployed it to the STM32U5 board connected to the USB port of our PC. The project is then edited and changes saved in GitHub. Debugging is enabled directly within the browser IDE.

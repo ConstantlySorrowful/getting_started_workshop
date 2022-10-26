@@ -5,13 +5,13 @@ weight : 300
 
 # Labs for this Workshop
 
-- [**Lab 1: Launch an EC2 Instance with AVH AMI**](/300-labs/lab-1)
-- [**Lab 2: Building and running code with AVH**](/300-labs/lab-2)
-- [**Lab 3: Automate with GitHub Actions CI/CD Workflows**](/300-labs/lab-3)
-- [**Lab 4: Moving your project to Keil Studio Cloud (KSC)**](/300-labs/lab-4)
-- [**Lab 5: Using Device Shadows**](/300-labs/lab-5)
-- [**Lab 6: Creating and Deploying Jobs**](/300-labs/lab-6)
-- [**Lab 7: Working With STM32U5 in Keil Studio Cloud (KSC)**](/300-labs/lab-7)
+- [**Lab 1: Working With STM32U5 in Keil Studio Cloud (KSC)**](/300-labs/lab-1)
+- [**Lab 2: Launch an EC2 Instance with AVH AMI**](/300-labs/lab-2)
+- [**Lab 3: Building and running code with AVH**](/300-labs/lab-3)
+- [**Lab 4: Automate with GitHub Actions CI/CD Workflows**](/300-labs/lab-4)
+- [**Lab 5: Moving your project to Keil Studio Cloud (KSC)**](/300-labs/lab-5)
+- [**Lab 6: Using Device Shadows**](/300-labs/lab-6)
+- [**Lab 7: Creating and Deploying Jobs**](/300-labs/lab-7)
 
 ### Check Back for New Content 
 

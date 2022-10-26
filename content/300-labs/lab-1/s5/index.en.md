@@ -1,28 +1,30 @@
 ---
-title : "Lab 1: Launch an EC2 Instance with AVH AMI (Optional: Step 5)"
-weight : 15
+title : "Lab 1: Developing With Keil Studio Cloud (KSC) (Step 5)"
+weight : 5
 ---
 
-**(Window - Putty)**
+### Build
 
-If you have created a new ssh key (e.g. avh-keypair.pem) you must import it into putty key format. Open the PuttyGen application and select the Conversions tab and choose Import key.
+1. Connect you STM32U5 board via USB cable to your PC. Then select from the dropdown list for **Target Hardware**: **WiFi (STM32U585AIIx)**
 
-![Putty Import](/static/putty-import.png)
+2. Then click the **Build** button.
 
-After importing the key click the **Save private key** button with file extension .ppk (e.g. avh-keypair.ppk)
+- The build should complete without errors.
 
-![Putty Save](/static/putty-save.png)
+![build u5](/static/build_u5.png)
 
-Now open the Putty application and enter the public IP address in the Session configuration. Also ensure the connection type is set to SSH.
+### Run/Debug
 
-![Putty Session](/static/putty-session.png)
+3. Finally, run or debug the project on the STM32U5 board connected via USB by clicking the run or debug buttons:
 
-Then scroll down to the Connection -> SSH -> Auth configuration page. At the bottom click the browse button and find the saved ppk file. (Be sure to select the .ppk file instead of the .pem file.)
+![run u5](/static/run_u5.png)
 
-![Putty Auth](/static/putty-auth.png)
+This will download the binary image to your connected U5 board. If you selected debug it will load the **main** function and allow you to begin stepping through the code with the debugger.
 
-Now click the open button and you should see a new session window open and a prompt for **login as:**. Enter **ubuntu**.
+![debug u5](/static/debug_u5.png)
 
-![Putty Login](/static/putty-login.png)
+### Output
 
-You should now see your console connection to the EC2 instance open.
+4. Connect a terminal program to your serial port. On windows you can use Putty, TeraTerm, etc. Configure as baud rate: 115,200, 1 stop bit, no parity.
+
+After the download completes the board should reset automatically and you should see output on the terminal program showing connecting to WiFi and AWS. The begin sending **"Hello World"** mqtt messages.
