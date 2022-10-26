@@ -5,7 +5,7 @@ weight : 3
 
 ## Fork the examples repository in GitHub
 
-Open a browser and navigate to [avh-workshop](https://github.com/aws-samples/avh-workshop). In top/right select **Fork**. A copy of this repository needs to be added to your own GitHub account to make changes and configure the CI/CD workflows.
+Open a browser and navigate to [avh-workshop](https://github.com/Arm-Examples/AWS_MQTT_MutualAuth_Demo.git). In top/right select **Fork**. A copy of this repository needs to be added to your own GitHub account to make changes and configure the CI/CD workflows.
 
 ![fork 1](/static/fork-1.png)
 

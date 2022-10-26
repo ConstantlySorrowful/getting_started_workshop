@@ -12,5 +12,5 @@ Open a terminal to the EC2 instance and follow these steps.
 
 ```bash
 cd $HOME
-git clone https://github.com/<your account>/avh-workshop.git
+git clone https://github.com/<your account>/AWS_MQTT_MutualAuth_Demo.git
 ```

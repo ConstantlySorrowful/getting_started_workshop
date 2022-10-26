@@ -1,6 +1,6 @@
 ---
 title : "AWS S3 Bucket"
-weight : 3
+weight : 4
 ---
 
 ### IAM - Create an S3 Bucket

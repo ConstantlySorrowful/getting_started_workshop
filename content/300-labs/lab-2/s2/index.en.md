@@ -1,6 +1,6 @@
 ---
-title : "Lab 1: Launch an EC2 Instance with AVH AMI (Step 2)"
-weight : 12
+title : "Lab 2: Launch an EC2 Instance with AVH AMI (Step 2)"
+weight : 2
 ---
 
 Read the terms and conditions and then click the **"Continue to Configuration"** button.

@@ -1,11 +1,13 @@
 ---
-title : "Lab 1: Launch an EC2 Instance with AVH AMI (Optional: Step 5)"
-weight : 15
+title : "Lab 2: Launch an EC2 Instance with AVH AMI (Optional: Step 5)"
+weight : 5
 ---
 
 **(Window - Putty)**
 
-If you have created a new ssh key (e.g. avh-keypair.pem) you must import it into putty key format. Open the PuttyGen application and select the Conversions tab and choose Import key.
+If you have created a new ssh key (e.g. avh-keypair.pem in step 3) you must import it into putty key format. Open the **PuttyGen** application and select the **Conversions** tab and choose **Import** key.
+
+If you want to use a key-pair you had previously uploaded to your AWS account, you should be able to find the file in your local user directory (e.g. C:\Users\<username>\.ssh\id_rsa. **Note: This is the default location, however you may have generated them into a different location if you setup another ssh client previously.**)
 
 ![Putty Import](/static/putty-import.png)
 
@@ -13,7 +15,7 @@ After importing the key click the **Save private key** button with file extensio
 
 ![Putty Save](/static/putty-save.png)
 
-Now open the Putty application and enter the public IP address in the Session configuration. Also ensure the connection type is set to SSH.
+Now open the **Putty** application and enter the public IP address in the Session configuration. Also ensure the connection type is set to SSH.
 
 ![Putty Session](/static/putty-session.png)
 

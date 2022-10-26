@@ -1,6 +1,6 @@
 ---
-title : "Lab 1: Launch an EC2 Instance with AVH AMI (Step 3)"
-weight : 13
+title : "Lab 2: Launch an EC2 Instance with AVH AMI (Step 3)"
+weight : 3
 ---
 
 On this page there are several selection options. For the Action, **Launch from Website** is the default. This will be sufficient for this workshop. If you need to adjust other configuration details, select Launch through EC2. Select an **EC2 Instance Type** of c5.large. This will be adequate for the workshop labs.
@@ -9,9 +9,13 @@ On this page there are several selection options. For the Action, **Launch from 
 
 Scroll down to select the VPC and subnet settings.  Your default VPC/subnet should already have automatic public IP address assignment enabled, however if you have multiple subnets configured be sure to select one that is enabled for public IP addresses. [See VPC public IP addresses](/300-labs/lab-1/s3/publicip)
 
-Also, not all instance region/type/subnet combinations are supported. Recommended: (us-east-1, c5large or t3large, subnets a,b,c,d,f - subnet 'e' in us-east-1 is not supported.) 
+**Also, not all instance region/type/subnet combinations are supported.**
 
-**Reminder** Be sure to provision resources (e.g. EC2 Instance, S3 Bucket, etc.) in the same region.
+**Recommended: us-east-1, c5large, any subnet except 'e' should be ok.**
+
+**Subnet 'e' in us-east-1 is not supported.** 
+
+**Reminder: Be sure to provision resources (e.g. EC2 Instance, S3 Bucket, etc.) in the same region.**
 
 ![avh_overview](/static/marketplace-6.png)
 

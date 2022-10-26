@@ -1,7 +1,7 @@
 ---
-title : "Lab 1: VPC Public IP Addresses"
+title : "Lab 2: VPC Public IP Addresses"
 toc: false
-weight : 13
+weight : 3
 ---
 
 Your default subnet should already have **Auto-assign IP settings** enabled. However, if you have selected a different subnet for launching the EC2 instance, please confirm this setting is enabled. You will need a public IP address to access your EC2 instance.

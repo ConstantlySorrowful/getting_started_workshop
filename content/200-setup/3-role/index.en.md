@@ -1,6 +1,6 @@
 ---
 title : "AWS IAM Role"
-weight : 2
+weight : 3
 ---
 
 ### IAM - Create an Instance Role

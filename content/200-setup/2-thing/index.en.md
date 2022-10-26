@@ -1,11 +1,7 @@
 ---
 title : "AWS IoT Things"
-weight : 1
+weight : 2
 ---
-
-## Setting up Resources in the AWS Console.
-
-We will need a few resources provisioned in AWS. 
 
 ### IoT Core - Create a Thing, Certificate, and Policy
 

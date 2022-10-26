@@ -1,6 +1,6 @@
 ---
-title : "Lab 1: Launch an EC2 Instance with AVH AMI (Optional: Step 6)"
-weight : 16
+title : "Lab 2: Launch an EC2 Instance with AVH AMI (Optional: Step 6)"
+weight : 6
 ---
 
 You can also use VS Code with the Remote SSH Extension to access the EC2 instance. If you already have VS Code installed on your workstation this extension will provide a better experience for editing files in later labs. 

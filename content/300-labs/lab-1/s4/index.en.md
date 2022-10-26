@@ -5,11 +5,14 @@ weight : 4
 
 ### Edit Configuration
 
-1. Return to the **Expolrer** view and expand the **certs** folder.
+1. Return to the **Expolrer** view and expand the **local** folder. The certificate created earlier and saved in the **local** folder will have generated 3 files. Each beginning with a long hash value. Open the file ending with <hash>-certificate.pem.crt. Copy the full contents into copy buffer (Ctrl-C).
 
-![explorer](/static/explorer-view.png)
+![explorer](/static/explorer-view2.png)
 
-2. Open the **secrets.txt** file in the editor window and append each line with values for your environment.
+
+3. Open the project file ./amazon-freertos/demos/include/aws_clientcredential_keys.h
+
+Open the **** file in the editor window and append each line with values for your environment.
 
 ![edit secrets](/static/edit-secrets.png)
 

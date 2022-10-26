@@ -13,6 +13,29 @@ weight : 3
 
 ![aws toolkit cert](/static/aws-tookit-cert.png)
 
+3. Careate a new file in the **local** directory by right clicking on **local** and selecting **New File**. Name the file **policy.json**.
+
+![local new file](/static/local-new-file.png)
+
+Insert the following text into policy.json file:
+
+```text
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "iot:*",
+            "Resource": "*"
+        }
+    ]
+}
+```
+
+4. Create a new policy by clicking the **+** symbol next to **Policies** and selecting the **policy.json** file. Give the policy a name (e.g. **MyIotPolicy**)
+
+![create policy](/static/create-policy.png)
+
 3. Attach a policy (created earlier) and activate the new certificate.
 
 ![attach policy](/static/cert-attach-policy.png)

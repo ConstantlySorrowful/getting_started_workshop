@@ -1,6 +1,6 @@
 ---
-title : "Lab 1: Launch an EC2 Instance with AVH AMI (Step 1)"
-weight : 11
+title : "Lab 2: Launch an EC2 Instance with AVH AMI (Step 1)"
+weight : 1
 ---
 
 ## In your browser, navigate to AWS marketplace
