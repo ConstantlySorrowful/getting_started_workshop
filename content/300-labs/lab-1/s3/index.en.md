@@ -17,7 +17,12 @@ weight : 3
 
 ![local new file](/static/local-new-file.png)
 
-Insert the following text into policy.json file:
+Insert the following text into policy.json file: 
+
+**Note:**
+
+**The policy shown here is only for demonstration.**
+**A production policy should follow best practices to restrict permissions to only what is necessary for you application**
 
 ```text
 {
@@ -32,18 +37,15 @@ Insert the following text into policy.json file:
 }
 ```
 
-4. Create a new policy by clicking the **+** symbol next to **Policies** and selecting the **policy.json** file. Give the policy a name (e.g. **MyIotPolicy**)
+4. Reopen the AWS Toolkit and create a new policy by clicking the **+** symbol next to **Policies** and selecting the **policy.json** file. Give the policy a name (e.g. **MyIotPolicy**)
 
 ![create policy](/static/create-policy.png)
 
-3. Attach a policy (created earlier) and activate the new certificate.
-
-![attach policy](/static/cert-attach-policy.png)
-
-4. Create a new thing. Select the **+** symbol next the **Things**. A prompt will appear to provide a name for your new thing.
+5. Create a new thing. Select the **+** symbol next the **Things**. A prompt will appear to provide a name for your new thing.
 
 ![new thing](/static/new-thing.png)
 
-5. Attach the certificate created earlier to your new thing.
+6. Now attach the new policy to the **thing** and activate the new certificate.
 
-![thing attach cert](/static/thing-attach-cert.png)
+![attach policy](/static/cert-attach-policy.png)
+
