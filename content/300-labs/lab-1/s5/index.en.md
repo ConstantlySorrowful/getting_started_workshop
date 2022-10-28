@@ -5,26 +5,21 @@ weight : 5
 
 ### Build
 
-1. Connect you STM32U5 board via USB cable to your PC. Then select from the dropdown list for **Target Hardware**: **WiFi (STM32U585AIIx)**
+1. Select the AVH target from the dropdown list for **Target Hardware**: **AVH (SSE-300-MPS3)**
+
+![select target](/static/select-target.png)
+
 
 2. Then click the **Build** button.
 
-- The build should complete without errors.
+- The build should complete without errors and it will also download a binary image to your local PC. This file is not needed at this time.
 
-![build u5](/static/build_u5.png)
+![avh build](/static/avh-build.png)
 
 ### Run/Debug
 
-3. Finally, run or debug the project on the STM32U5 board connected via USB by clicking the run or debug buttons:
+3. Finally, run the project on the AVH virtual target.
 
-![run u5](/static/run_u5.png)
+![run avh](/static/run-avh.png)
 
-This will download the binary image to your connected U5 board. If you selected debug it will load the **main** function and allow you to begin stepping through the code with the debugger.
-
-![debug u5](/static/debug_u5.png)
-
-### Output
-
-4. Connect a terminal program to your serial port. On windows you can use Putty, TeraTerm, etc. Configure as baud rate: 115,200, 1 stop bit, no parity.
-
-After the download completes the board should reset automatically and you should see output on the terminal program showing connecting to WiFi and AWS. The begin sending **"Hello World"** mqtt messages.
+You should now see the virtual target launch and begin to run the application. The output window sill show setting up an MQTT connection to your AWS account and begin publishing. It will also subscribe to the same topic to see the messages coming back.
