@@ -1,5 +1,5 @@
 ---
-title : "Lab 3: Automate with GitHub Actions CI/CD Workflows (Step 2)"
+title : "Lab 4: Automate with GitHub Actions CI/CD Workflows (Step 2)"
 weight : 2
 ---
 

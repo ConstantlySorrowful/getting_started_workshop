@@ -23,3 +23,4 @@ weight : 5
 ![run avh](/static/run-avh.png)
 
 You should now see the virtual target launch and begin to run the application. The output window sill show setting up an MQTT connection to your AWS account and begin publishing. It will also subscribe to the same topic to see the messages coming back.
+

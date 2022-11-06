@@ -1,5 +1,5 @@
 ---
-title : "Lab 7: Creating and Deploying Jobs (Step 4)"
+title : "Lab 6: Creating and Deploying Jobs (Step 4)"
 weight : 4
 ---
 

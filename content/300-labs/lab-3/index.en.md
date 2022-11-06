@@ -1,5 +1,5 @@
 ---
-title : "Lab 2: Building and running code with AVH"
+title : "Lab 3: Building and running code with AVH"
 weight : 20
 ---
 

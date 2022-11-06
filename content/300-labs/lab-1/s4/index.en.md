@@ -5,33 +5,90 @@ weight : 4
 
 ### Edit Configuration
 
-To update our configuration files, we will use the additional files added to **local** from the S3 bucket earlier.
+KSC provides a method to create custome **tasks**. You can use custom tasks for adding special functions to automate repeating tasks. Here we will create a task to simple open a bash shell.
 
-1. Select the local folder again and open the file **config.txt**. Complete line with values from your own account.
+1. Press **Ctrl-Shift-P** to open the command tool. Search for Task: **Configure Tasks...**.
 
+![config tasks](/static/config-tasks.png)
 
-**(Note: Do not leave a space after the '=' symbol.)**
+1. Create a new **Global** task using the following text. 
 
-```text
-export MQTT_BROKER_ENDPOINT=
-export IOT_THING_NAME=
-export WIFI_SSID=
-export WIFI_PASSWORD=
+```json
+{
+	"version": "2.0.0",
+	"tasks": [
+        {
+            "label": "bash",
+            "type": "process",
+            "args": [
+                "-l"
+            ],
+            "command": "/bin/bash",
+            "presentation": {
+                "echo": false,
+                "focus": true,
+                "group": "build",
+                "panel": "dedicated"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
 ```
 
-2. Add a **task** to the IDE to help us apply these configuration items into the code. Open the **tasks.json** file in **local** and select all the text. Then use Ctrl-C (or CMD-C on a Mac) to copy the text to the copy buffer. 
-
-3. Press Ctrl-Shift-P to open the Command selection tool and search for **Task: Configure Tasks...**. This will open a new **tasks.json** file. (Global) Paste the contents of the copy buffer into the new **tasks.json** file window. Replace any text already in this file. (Ctrl-V). This is adding 2 new tasks to the IDE. (**edit-creds** and **bash**)
-
-![](/static/config-tasks.png)
-
-4. Now you can run the **edit-creds** task using Ctrl-Shift-P again. This time searching for **Task: Run Task...** and then selecting the **edit-creds** task. This will apply the config values to the code before building and running. 
-
-You won't see any output from running the command, but you can verify it completed by checking the contents of one of the source code files in ./aws_mqtt_mutualauth_demo/amazon-freertos/demos/include/aws_client_credential.h
-
-![verify](/static/verify-code.png)
+2. Also create a new file in the **local** folder. Name it **pem2str**. Insert the following text into this new file.
 
 
-An additional **task** is also added to open a **bash** shell if needed.
+```bash
+sed 's/^/"/;s/$/\\n" \\/' $1 > $1.str
+```
 
+3. Now open a bash shell by running the new task. Press **Ctrl-Shift-P** and search for **Task: Run Task...**. Select the **bash** task and a new panel will open at the bottom. In the **bash** shell, navigate to the **local** folder.
+
+```bash
+cd /home/studio/workspace/local
+```
+
+4. Add execute permission to the file **pem2str**.
+
+```bash
+chmod +x pem2str
+```
+
+5. Now execute the **pem2str** script to create modified versions of the certificate and private key files.
+
+```bash
+./pem2str <xxxxx>-certificate.pem.crt
+./pem2str <xxxxx>-private.pem.key
+```
+
+6. Now open the new version of the certificate file. It is named the same as the original with **.str** appended. Select the full text into the copy buffer. (Ctrl-C)
+
+7. Open the project file **./aws_mqtt_mutualauth_demo/amazon-freertos/demos/include/aws_clientcredential_keys.h** and scroll down untill you find the section defining the certificate.
+
+    #define keyCLIENT_CERTIFICATE_PEM    \
+
+Insert the copied text below this line. (Yours will not match this.)
+
+![cert string](/static/cert-string.png)
+
+8. Scroll down further until you find the private key section.
+
+    #define keyCLIENT_PRIVATE_KEY_PEM    \
+
+Copy/paste from the modified version of the private key file ( with .str appended) in the **local** folder below this line.
+
+![private-key](/static/private-key.png)
+
+9. Now open the file **./aws_mqtt_mutualauth_demo/amazon-freertos/demos/include/aws_clientcredential.h**. Scroll down to find:
+
+    #define clientcredentialMQTT_BROKER_ENDPOINT ""
+
+Insert the AWS IoT Core endpoint from your own account.
+
+Then a few lines below you will find: 
+
+    #define clientcredentialIOT_THING_NAME ""
+
+Insert the thing name created earlier.
 
