@@ -83,32 +83,6 @@ Edit each of these values to be correct for you account.
 
 ![settings 2](/static/settings-2.png)
 
-11. Create a helper script in $HOME/bin folder named pem2str. Insert the following contents:
-
-```bash
-sed 's/^/"/;s/$/\\n" \\/' $1 > $1.str
-```
-
-Then make it executable:
-
-```bash
-chmod +x pem2str
-```
-
-12. Now we will use this script to help convert the certificates from **pem** format to C-string format that we can insert into code. Execute this scripts below to apply the changes to our code. **Replace the values with the correct values for your account**.
-
-```
-cd $HOME/local/
-$HOME/bin/pem2str <hash>-certificate.pem.crt
-$HOME/bin/pem2str <hash>-private.pem.key 
-export CLIENT_CERTIFICATE_PEM=`cat <hash>-certificate.pem.crt.str`
-export CLIENT_PRIVATE_KEY_PEM=`cat <hash>-private.pem.key.str`
-export MQTT_BROKER_ENDPOINT=xxxxxxxxxxxxx-ats.iot.us-east-1.amazonaws.com
-export IOT_THING_NAME=xxxxx
-cd $HOME/AWS_MQTT_MutualAuth_Demo/amazon-freertos/demos/include/
-envsubst <aws_clientcredential_keys.h.in >aws_clientcredential_keys.h
-envsubst <aws_clientcredential.h.in >aws_clientcredential.h
-```
 
 See this table for more information:
 

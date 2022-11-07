@@ -5,16 +5,17 @@ weight : 8
 
 ## Build and run the code
 
-You can now build the project using the cmsis-toolbox utility 'cbuild'.
+You can now build the project using the cmsis-toolbox utilities **csolution** and **cbuild**.
 
 ```bash
-cd $HOME/avh-workshop
-cbuild.sh demo.VHT_MPS3_Corstone_SSE-300.cprj
+cd $HOME/AWS_MQTT_MutualAuth_Demo
+csolution convert -s Demo.csolution.yml
+cbuild Demo.Debug+AVH.cprj
 ```
 You should see many lines of compiling scroll past, but at the end you should see:
 
 ```
-cbuild.sh finished successfully!
+cbuild finished successfully!
 ```
 
 It is time to run the image using the AVH emulator. Before starting the emulator, open the AWS Console in your browser and navigate to the IoT Core service page. 
@@ -30,15 +31,15 @@ It is time to run the image using the AVH emulator. Before starting the emulator
 
 Keep this tab open in your browser to see MQTT messages sent from the application.
 
-Now return to the shell in the EC2 instance and execute the following code. Or run ./scripts/run300.sh
+Now return to the shell in the EC2 instance and execute the following code.
 
 ```bash
-cd $HOME/avh-workshop
+cd $HOME/AWS_MQTT_MutualAuth_Demo
 VHT_MPS3_Corstone_SSE-300 \
 -C mps3_board.visualisation.disable-visualisation=1 \
 -C mps3_board.telnetterminal0.start_telnet=0 \
 -C mps3_board.uart0.out_file=- \
--a Objects/image.axf
+-a /home/ubuntu/AWS_MQTT_MutualAuth_Demo/out/Demo/AVH/Debug/Demo.Debug+AVH.axf
 ```
 
 After the emulator starts and loads the image file, you will see messages begin to scroll up.
